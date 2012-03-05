@@ -79,3 +79,7 @@ set noswapfile
 nnoremap <F4> :GundoToggle<CR>
 " close Gundo on revert
 let g:gundo_close_on_revert = 1
+
+" NERDTree customization
+map <leader><TAB> :<C-U>NERDTreeToggle<CR>
+let g:NERDTreeQuitOnOpen = 1
