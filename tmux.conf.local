@@ -1,0 +1,89 @@
+# act like GNU screen
+unbind C-b
+set -g prefix C-a
+
+# changing default delay
+set -sg escape-time 1
+
+# act like vim
+setw -g mode-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# sane window splitting
+unbind %
+bind v split-window -h
+bind s split-window -v
+
+# sane resizing of panes
+bind -r H resize-pane -L 5
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r L resize-pane -R 5
+
+# make it possible to temporarily focus on one pane
+unbind Up
+bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp # focus the current active pane
+unbind Down 
+bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp # go back to the original pane-setup
+
+# to cycle through windows
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
+
+# to cycle through sessions
+unbind Right
+bind -r Right switch-client -p
+unbind Left
+bind -r Left switch-client -n
+
+# behave like vim for copy mode
+unbind [
+bind-key Escape copy-mode
+unbind p
+bind p paste-buffer
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+#
+# reload tmux.conf
+unbind r
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+# look good
+set -g default-terminal "screen-256color"
+
+# start window numbering at 1
+set -g base-index 1
+
+# start pene numbering at 1
+set-window-option -g pane-base-index 1
+
+# when we really want to hit C-a
+bind C-a send-prefix
+
+# status bar customization
+# show session name and active pane index
+set -g status-left "[#S](#P)"
+
+# center window list
+set -g status-justify centre
+
+# visual activity indicator
+setw -g monitor-activity on
+set -g visual-activity on
+
+# using OS X Clipboard
+set -g default-command "reattach-to-user-namespace -l zsh"
+# copy tmux content to system buffer
+bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
+# paste from system buffer into tmux
+bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
+
+# set default shell to zsh
+set -g default-command /bin/zsh
+set -g default-shell /bin/zsh
+
+# make it possible to scroll with the trackpad
+set -g mode-mouse on
