@@ -83,3 +83,15 @@ let g:gundo_close_on_revert = 1
 " NERDTree customization
 map <leader><TAB> :<C-U>NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen = 1
+
+" show YankRing history
+nnoremap <silent> <F1> :YRShow<cr>
+inoremap <silent> <F1> <ESC>:YRShow<cr>
+
+" remap ctrlp to <leader>t
+let g:ctrlp_map = '<leader>t'
+
+"make ZoomWin work on <leader>0
+map <leader>0 :ZoomWin<CR>
+
+
