@@ -13,6 +13,15 @@ set showcmd
 " load file type plugins + indentation
 filetype plugin indent on
 
+"""""""""""""
+" solarized "
+""""""""""""""
+set background=dark
+colorscheme solarized
+" to toggle solarized background
+call togglebg#map("<F2>")"
+
+
 """"""""""""""
 " Whitespace "
 """"""""""""""
