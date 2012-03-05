@@ -1,0 +1,73 @@
+" use pathogen for vim plugins
+" use plugins in ~/.vim/bundle
+call pathogen#infect()
+
+" set ',' as leader
+let mapleader = ","
+" no compatibilty with legacy vim
+set nocompatible
+syntax enable
+set encoding=utf-8
+" display incomplete commands
+set showcmd 
+" load file type plugins + indentation
+filetype plugin indent on
+
+""""""""""""""
+" Whitespace "
+""""""""""""""
+" a tab is two spaces
+set tabstop=2 shiftwidth=2
+" use spaces, not tabs
+set expandtab 
+" wrap lines 
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+" show end of lines
+set list
+set listchars=eol:¬
+
+
+"""""""""""""
+" Searching "
+"""""""""""""
+" highlight matches
+set hlsearch 
+" to show matches while typing
+set incsearch
+" ignore case on search
+set ignorecase
+" unless they contain at least one capital letter
+set smartcase 
+
+"""""""""""""""""""""
+" window navigation "
+"""""""""""""""""""""
+" ease up window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" nice moving inside of tex files
+map j gj
+map k gk
+map [Up] gk
+map [Down] gj
+
+" Resize splits when the window is resized
+au VimResized * exe "normal! \<c-w>="
+
+""""""""
+" misc "
+""""""""
+" save when focus is lost
+au FocusLost * :wa
+
+" dismiss highlighted search items on leader+space
+nnoremap <leader><space> :noh<cr>
+
+" no need for swapfiles¬
+set noswapfile
