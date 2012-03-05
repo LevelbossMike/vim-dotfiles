@@ -71,3 +71,11 @@ nnoremap <leader><space> :noh<cr>
 
 " no need for swapfiles¬
 set noswapfile
+
+""""""""""""""""""""""""
+" plugin customization "
+""""""""""""""""""""""""
+" graphical vim undo gundo
+nnoremap <F4> :GundoToggle<CR>
+" close Gundo on revert
+let g:gundo_close_on_revert = 1
