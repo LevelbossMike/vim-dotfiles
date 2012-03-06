@@ -31,12 +31,14 @@ set tabstop=2 shiftwidth=2
 set expandtab 
 " wrap lines 
 set wrap
-set textwidth=79
+set textwidth=80
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=80
 " show end of lines
 set list
 set listchars=eol:¬
+" show linenumbers
+set number
 
 
 """""""""""""
