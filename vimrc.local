@@ -106,5 +106,5 @@ let g:ctrlp_map = '<leader>t'
 
 " make ZoomWin work on <leader>0
 map <leader>0 :ZoomWin<CR>
-
-
+" ack on cmd+shift+f
+map <leader>f :Ack<space>
