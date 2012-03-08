@@ -12,6 +12,8 @@ set encoding=utf-8
 set showcmd 
 " load file type plugins + indentation
 filetype plugin indent on
+" load new files per default (e.q when git-branch was switched)
+set autoread
 
 """""""""""""
 " solarized "
