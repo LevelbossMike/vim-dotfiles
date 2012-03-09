@@ -73,6 +73,12 @@ map [Down] gj
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
+" make it easy to resize windows
+map + <C-W>+
+map - <C-W>-
+map ö <C-W><
+map ä <C-W>>
+
 """"""""
 " misc "
 """"""""

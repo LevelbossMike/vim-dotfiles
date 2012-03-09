@@ -57,7 +57,7 @@ set -g default-terminal "screen-256color"
 # start window numbering at 1
 set -g base-index 1
 
-# start pene numbering at 1
+# start pane numbering at 1
 set-window-option -g pane-base-index 1
 
 # when we really want to hit C-a
