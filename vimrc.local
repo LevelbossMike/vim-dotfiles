@@ -14,6 +14,8 @@ set showcmd
 filetype plugin indent on
 " load new files per default (e.q when git-branch was switched)
 set autoread
+" underscore '_' will be considered a word delimter
+set iskeyword-=_
 
 """""""""""""
 " solarized "
@@ -90,6 +92,9 @@ nnoremap <leader><space> :noh<cr>
 
 " no need for swapfiles¬
 set noswapfile
+
+" f12 to turn on/off highlighting of the current line
+noremap <silent><f9> :set cursorline!<cr>
 
 """"""""""""""""""""""""
 " plugin customization "
