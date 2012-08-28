@@ -119,3 +119,5 @@ let g:ctrlp_map = '<leader>t'
 map <leader>0 :ZoomWin<CR>
 " ack on cmd+shift+f
 map <leader>f :Ack<space>
+" ignore tmp directory for ctrlp
+set wildignore+=*/tmp/*
