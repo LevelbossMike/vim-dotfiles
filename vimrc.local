@@ -40,7 +40,7 @@ set formatoptions=qrn1
 set colorcolumn=80
 " show end of lines
 set list
-set listchars=eol:¬
+set listchars=eol:~
 " show linenumbers
 set number
 
