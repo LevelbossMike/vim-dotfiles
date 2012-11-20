@@ -127,3 +127,8 @@ set wildignore+=*/tmp/*
 map <leader>c :CoffeeLint \| cwindow<CR>
 " watch compile the current .coffee-file
 map <leader>w :CoffeeCompile watch vert<CR>
+
+" always change filetype for hamlbars files to haml
+if has("autocmd")
+  au BufNewFile,BufRead *.hamlbars set filetype=haml
+endif
