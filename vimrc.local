@@ -1,19 +1,57 @@
-" use pathogen for vim plugins
-" use plugins in ~/.vim/bundle
-call pathogen#infect()
+" no compatibilty with legacy vim
+set nocompatible
+
+""""""""""
+" Vundle "
+""""""""""
+" required for vundle
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+"""""""""""
+" Bundles "
+"""""""""""
+Bundle 'YankRing'
+Bundle 'ZoomWin'
+Bundle 'gitv'
+Bundle 'SuperTab'
+Bundle 'NerdTree'
+Bundle 'NERD_commenter'
+
+" github repos
+Bundle 'kien/ctrlp'
+Bundle 'sjl/gundo'
+Bundle 'godlygeek/tabular'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'nathanaelkane/vim-indent-guides'
+
+"""""""""""""""""""""""""""""""""
+" Tim Pope is teh vim superhero "
+"""""""""""""""""""""""""""""""""
+Bundle 'fugitive'
+Bundle 'repeat'
+Bundle 'surround'
+
+"""""""""""
+" /Vundle "
+"""""""""""
+
+" load file type plugins + indentation
+filetype plugin indent on
 
 " set ',' as leader
 let mapleader = ","
-" no compatibilty with legacy vim
-set nocompatible
 " disable arrow keys because they make 'O' unusably slow
 set noesckeys
 syntax enable
 set encoding=utf-8
 " display incomplete commands
 set showcmd
-" load file type plugins + indentation
-filetype plugin indent on
 " load new files per default (e.q when git-branch was switched)
 set autoread
 
