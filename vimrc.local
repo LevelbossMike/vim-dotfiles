@@ -125,10 +125,9 @@ set wildignore+=*/tmp/*
 " some useful bindings for coffeescript code
 " lint the current .coffee-file
 map <leader>c :CoffeeLint \| cwindow<CR>
+
 " watch compile the current .coffee-file
 map <leader>w :CoffeeCompile watch vert<CR>
 
-" always change filetype for hamlbars files to haml
-if has("autocmd")
-  au BufNewFile,BufRead *.hamlbars set filetype=haml
-endif
+" align selected lines on '='
+map <leader>9 :Tabularize/=<cr>
