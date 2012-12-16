@@ -8,5 +8,7 @@ cp ~/.vim/mik.zsh-theme ~/.oh-my-zsh/themes/mik.zsh-theme
 cp ~/.vim/vimrc.local ~/.vimrc
 cp ~/.vim/zshrc.local ~/.zshrc
 cp ~/.vim/tmux.conf.local ~/.tmux.conf
-cd ~/.vim
-git submodule update --init
+# to install vundle
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# to install bundles
+vim +BundleInstall +qall
