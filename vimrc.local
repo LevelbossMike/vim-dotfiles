@@ -29,6 +29,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'kchmck/vim-coffee-script'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
@@ -36,6 +37,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-haml"
 
 """""""""""
 " /Vundle "
