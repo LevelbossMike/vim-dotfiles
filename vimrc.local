@@ -154,20 +154,27 @@ inoremap <silent> <F1> <ESC>:YRShow<cr>
 
 " remap ctrlp to <leader>t
 let g:ctrlp_map = '<leader>t'
+" ignore tmp directory for ctrlp
+set wildignore+=*/tmp/*
 
 " make ZoomWin work on <leader>0
 map <leader>0 :ZoomWin<CR>
+
 " ack on cmd+shift+f
 map <leader>f :Ack<space>
-" ignore tmp directory for ctrlp
-set wildignore+=*/tmp/*
 
 " some useful bindings for coffeescript code
 " lint the current .coffee-file
 map <leader>c :CoffeeLint \| cwindow<CR>
-
 " watch compile the current .coffee-file
 map <leader>w :CoffeeCompile watch vert<CR>
 
 " align selected lines on '='
 map <leader>9 :Tabularize/=<cr>
+
+" for previewing markdown with the 'marked'-app on OS X
+function! s:setupMarkup()
+  nnoremap <leader>p :silent !open -a Marked.app '%:p'<cr>
+endfunction
+
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
