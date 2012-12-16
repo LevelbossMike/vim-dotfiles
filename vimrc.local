@@ -16,26 +16,26 @@ Bundle 'gmarik/vundle'
 """""""""""
 " Bundles "
 """""""""""
-Bundle 'YankRing'
-Bundle 'ZoomWin'
-Bundle 'gitv'
-Bundle 'SuperTab'
-Bundle 'NerdTree'
-Bundle 'NERD_commenter'
-
 " github repos
-Bundle 'kien/ctrlp'
-Bundle 'sjl/gundo'
+Bundle 'vim-scripts/YankRing.vim'
+Bundle 'vim-scripts/ZoomWin'
+Bundle 'ervandew/supertab'
+Bundle "scrooloose/nerdcommenter"
+Bundle "scrooloose/nerdtree"
+Bundle 'gregsexton/gitv'
+Bundle 'godlygeek/tabular'
+Bundle 'kien/ctrlp.vim'
+Bundle 'sjl/gundo.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nathanaelkane/vim-indent-guides'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
-"""""""""""""""""""""""""""""""""
-Bundle 'fugitive'
-Bundle 'repeat'
-Bundle 'surround'
+""""""""""""""""""""""""""""""""""
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-surround"
+Bundle "tpope/vim-repeat"
 
 """""""""""
 " /Vundle "
