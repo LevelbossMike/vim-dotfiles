@@ -38,8 +38,6 @@ export PATH=/usr/local/git/bin:/usr/local/bin:$HOME/usr/local/bin:/usr/bin:/bin:
 
 # set vi-bindings
 bindkey -v
-# allow color for ack pager
-export LESS=-RFC
 
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
 # make rvm work well with iterm2
