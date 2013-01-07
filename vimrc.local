@@ -26,10 +26,10 @@ Bundle 'gregsexton/gitv'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/gundo.vim'
-Bundle 'godlygeek/tabular'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'hallison/vim-markdown'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
@@ -56,6 +56,8 @@ set encoding=utf-8
 set showcmd
 " load new files per default (e.q when git-branch was switched)
 set autoread
+" make backspace work like most other apps
+set backspace=2
 
 """""""""""""
 " solarized "
