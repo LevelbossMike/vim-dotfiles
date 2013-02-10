@@ -31,6 +31,9 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'hallison/vim-markdown'
 
+" make html edition work in a sane way
+Bundle 'tristen/vim-sparkup'
+
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
 """"""""""""""""""""""""""""""""""
