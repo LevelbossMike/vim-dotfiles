@@ -30,6 +30,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'hallison/vim-markdown'
+Bundle 'duwanis/tomdoc.vim'
 
 " make html edition work in a sane way
 Bundle 'tristen/vim-sparkup'
