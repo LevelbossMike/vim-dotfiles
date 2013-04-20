@@ -32,6 +32,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'hallison/vim-markdown'
 Bundle 'duwanis/tomdoc.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'terryma/vim-multiple-cursors'
 
 " make html edition work in a sane way
 Bundle 'tristen/vim-sparkup'
