@@ -36,6 +36,8 @@ Bundle 'terryma/vim-multiple-cursors'
 
 " make html edition work in a sane way
 Bundle 'tristen/vim-sparkup'
+" work with handlebars
+Bundle 'nono/vim-handlebars'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
@@ -141,7 +143,7 @@ nnoremap <leader><space> :noh<cr>
 " no need for swapfiles¬
 set noswapfile
 
-" f12 to turn on/off highlighting of the current line
+" f9 to turn on/off highlighting of the current line
 noremap <silent><f9> :set cursorline!<cr>
 
 """"""""""""""""""""""""
@@ -168,7 +170,7 @@ set wildignore+=*/tmp/*
 " make ZoomWin work on <leader>0
 map <leader>0 :ZoomWin<CR>
 
-" ack on cmd+shift+f
+" ack on leader+f
 map <leader>f :Ack<space>
 
 " some useful bindings for coffeescript code
@@ -186,3 +188,8 @@ function! s:setupMarkup()
 endfunction
 
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+" handle hamlbars files like haml
+if has("autocmd")
+  au BufNewFile,BufRead *.hamlbars set filetype=haml
+endif
