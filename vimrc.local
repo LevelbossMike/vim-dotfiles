@@ -33,6 +33,10 @@ Bundle 'hallison/vim-markdown'
 Bundle 'duwanis/tomdoc.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'heartsentwined/vim-emblem'
+Bundle 'zerowidth/vim-copy-as-rtf'
+Bundle 'chriskempson/base16-vim'
 
 " make html edition work in a sane way
 Bundle 'tristen/vim-sparkup'
@@ -70,10 +74,15 @@ set backspace=2
 """""""""""""
 " solarized "
 """"""""""""""
-set background=dark
-colorscheme solarized
-" to toggle solarized background
-call togglebg#map("<F2>")"
+"set background=dark
+"colorscheme solarized
+"" to toggle solarized background
+"call togglebg#map("<F2>")"
+
+""""""""""
+" base16 "
+""""""""""
+colorscheme base16-eighties
 
 
 """"""""""""""
@@ -90,7 +99,7 @@ set formatoptions=qrn1
 set colorcolumn=80
 " show end of lines
 set list
-set listchars=eol:~
+set listchars=tab:\ \ ,trail:·,eol:~
 " show linenumbers
 set number
 
@@ -193,3 +202,8 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 if has("autocmd")
   au BufNewFile,BufRead *.hamlbars set filetype=haml
 endif
+
+" easy rspec
+let g:rspec_command = "!rspec --drb --color --format=doc {spec}"
+map <leader>r :call RunCurrentSpecFile()<cr>~
+map <leader>e :call RunNearestSpec()<cr>~
