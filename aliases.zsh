@@ -38,7 +38,6 @@ alias m="mvim"
 
 # redis
 alias redis="redis-server /usr/local/etc/redis.conf"
-alias dipl="cd ~/Dropbox/studium/Diplomarbeit/public_cloud_risks/"
 
 # tmux 
 alias t="tmux -u" # run with utf-8 enabled!
