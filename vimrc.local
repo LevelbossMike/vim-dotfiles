@@ -37,6 +37,10 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'heartsentwined/vim-emblem'
 Bundle 'zerowidth/vim-copy-as-rtf'
 Bundle 'chriskempson/base16-vim'
+Bundle 'wikitopian/hardmode'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'pangloss/vim-javascript'
+Bundle 'elzr/vim-json'
 
 " make html edition work in a sane way
 Bundle 'tristen/vim-sparkup'
@@ -71,17 +75,7 @@ set autoread
 " make backspace work like most other apps
 set backspace=2
 
-"""""""""""""
-" solarized "
-""""""""""""""
-"set background=dark
-"colorscheme solarized
-"" to toggle solarized background
-"call togglebg#map("<F2>")"
-
-""""""""""
-" base16 "
-""""""""""
+" Base 16
 colorscheme base16-eighties
 
 
@@ -182,12 +176,6 @@ map <leader>0 :ZoomWin<CR>
 " ack on leader+f
 map <leader>f :Ack<space>
 
-" some useful bindings for coffeescript code
-" lint the current .coffee-file
-map <leader>c :CoffeeLint \| cwindow<CR>
-" watch compile the current .coffee-file
-map <leader>w :CoffeeCompile watch vert<CR>
-
 " align selected lines on '='
 map <leader>9 :Tabularize/=<cr>
 
@@ -205,5 +193,12 @@ endif
 
 " easy rspec
 let g:rspec_command = "!rspec --drb --color --format=doc {spec}"
-map <leader>r :call RunCurrentSpecFile()<cr>~
-map <leader>e :call RunNearestSpec()<cr>~
+map <leader>r :call RunCurrentSpecFile()<CR>
+map <leader>e :call RunNearestSpec()<CR>
+map <leader>w :call RunLastSpec()<CR>
+
+" Hard Mode
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" Hard Mode per default
+"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
