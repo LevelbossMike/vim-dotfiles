@@ -33,14 +33,15 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# base-16 shell
+BASE16_SCHEME="eighties"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
 # Customize to your needs...
 export PATH=/usr/local/git/bin:/usr/local/bin:$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin:$HOME/bin:/usr/local/mysql/bin
 
 # set vi-bindings
 bindkey -v
 
-[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
-# make rvm work well with iterm2
-__rvm_project_rvmrc
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
