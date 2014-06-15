@@ -38,7 +38,6 @@ Bundle 'heartsentwined/vim-emblem'
 Bundle 'zerowidth/vim-copy-as-rtf'
 Bundle 'chriskempson/base16-vim'
 Bundle 'wikitopian/hardmode'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 
@@ -204,4 +203,4 @@ map <leader>w :call RunLastSpec()<CR>
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " Hard Mode per default
-"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
