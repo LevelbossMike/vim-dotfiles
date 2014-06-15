@@ -170,7 +170,7 @@ inoremap <silent> <F1> <ESC>:YRShow<cr>
 " remap ctrlp to <leader>t
 let g:ctrlp_map = '<leader>t'
 " ignore tmp directory for ctrlp
-set wildignore+=*/tmp/*
+set wildignore+=*/tmp/*,node_modules
 
 " make ZoomWin work on <leader>0
 map <leader>0 :ZoomWin<CR>
