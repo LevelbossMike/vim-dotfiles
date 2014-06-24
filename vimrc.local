@@ -163,6 +163,9 @@ let g:gundo_close_on_revert = 1
 map <leader><TAB> :<C-U>NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen = 1
 
+" NERDCommenter - always use one space between comment and code
+let NERDSpaceDelims = 1
+
 " show YankRing history
 nnoremap <silent> <F1> :YRShow<cr>
 inoremap <silent> <F1> <ESC>:YRShow<cr>
