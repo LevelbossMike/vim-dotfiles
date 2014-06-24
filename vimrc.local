@@ -90,9 +90,9 @@ set tabstop=2 shiftwidth=2
 set expandtab
 " wrap lines
 set wrap
-set textwidth=80
+set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=80
+set colorcolumn=79
 " show end of lines
 set list
 set listchars=tab:\ \ ,trail:·,eol:~
