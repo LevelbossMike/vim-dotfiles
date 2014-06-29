@@ -6,10 +6,10 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 # install customization
 cp ~/.vim/aliases.zsh ~/.oh-my-zsh/custom
 mkdir ~/.oh-my-zsh/custom/themes && cp ~/.vim/mik.zsh-theme ~/.oh-my-zsh/custom/themes
-cp ~/.vim/vimrc.local ~/.vimrc
-cp ~/.vim/zshrc.local ~/.zshrc
-cp ~/.vim/tmux.conf.local ~/.tmux.conf
-cp ~/.vim/ackrc.local ~/.ackrc
+ln ~/.vim/vimrc.local ~/.vimrc
+ln ~/.vim/zshrc.local ~/.zshrc
+ln ~/.vim/tmux.conf.local ~/.tmux.conf
+ln ~/.vim/ackrc.local ~/.ackrc
 # make vi mode work in terminal
 cp ~/.vim/inputrc.local ~/.inputrc
 # make vi mode work in irb/pry/rails_console
