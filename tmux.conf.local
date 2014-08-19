@@ -76,8 +76,8 @@ bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
 
 # set default shell to zsh
-set -g default-command /bin/zsh
-set -g default-shell /bin/zsh
+set -g default-command "$SHELL --login"
+set -g default-shell $SHELL
 
 # make it possible to scroll with the trackpad
 set -g mode-mouse on
