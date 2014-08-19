@@ -44,6 +44,8 @@ export PATH=/usr/local/git/bin:/usr/local/bin:$HOME/usr/local/bin:/usr/bin:/bin:
 # set vi-bindings
 bindkey -v
 
+. `brew --prefix`/etc/profile.d/z.sh
+
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
