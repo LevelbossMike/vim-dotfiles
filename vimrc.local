@@ -18,7 +18,7 @@ Bundle 'gmarik/vundle'
 """""""""""
 " github repos
 Bundle 'vim-scripts/YankRing.vim'
-Bundle 'vim-scripts/ZoomWin'
+Bundle 'regedarek/ZoomWin'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
