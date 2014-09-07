@@ -173,7 +173,7 @@ inoremap <silent> <F1> <ESC>:YRShow<cr>
 " remap ctrlp to <leader>t
 let g:ctrlp_map = '<leader>t'
 " ignore tmp directory for ctrlp
-set wildignore+=*/tmp/*,node_modules
+set wildignore+=*/tmp/*,node_modules,*/dist
 
 " make ZoomWin work on <leader>0
 map <leader>0 :ZoomWin<CR>
@@ -197,7 +197,7 @@ if has("autocmd")
 endif
 
 " easy rspec
-let g:rspec_command = "!rspec --drb --color --format=doc {spec}"
+let g:rspec_command = "!theine rspec --color --format=doc {spec}"
 map <leader>r :call RunCurrentSpecFile()<CR>
 map <leader>e :call RunNearestSpec()<CR>
 map <leader>w :call RunLastSpec()<CR>
@@ -207,3 +207,8 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " Hard Mode per default
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+" make pasting from clipboard work (no indents etc.)
+set paste
+" yanking should save to system clipboard (only works with macvim)
+set clipboard=unnamed
