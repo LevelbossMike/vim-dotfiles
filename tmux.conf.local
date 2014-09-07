@@ -75,7 +75,7 @@ setw -g monitor-activity on
 set -g visual-activity on
 
 # set default shell to zsh
-set -g default-command "$SHELL --login"
+set -g default-command "reattach-to-user-namespace $SHELL --login"
 set -g default-shell $SHELL
 
 # make it possible to scroll with the trackpad
