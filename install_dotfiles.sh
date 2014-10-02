@@ -10,6 +10,7 @@ ln ~/.vim/vimrc.local ~/.vimrc
 ln ~/.vim/zshrc.local ~/.zshrc
 ln ~/.vim/tmux.conf.local ~/.tmux.conf
 ln ~/.vim/ackrc.local ~/.ackrc
+ln ~/.vim/gitconfig.local ~/.gitconfig
 # make vi mode work in terminal
 cp ~/.vim/inputrc.local ~/.inputrc
 # make vi mode work in irb/pry/rails_console

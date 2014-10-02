@@ -45,6 +45,8 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'tristen/vim-sparkup'
 " work with handlebars
 Bundle 'nono/vim-handlebars'
+" work with rust
+Plugin 'wting/rust.vim'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
@@ -209,6 +211,8 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " make pasting from clipboard work (no indents etc.)
-set paste
+" set paste
 " yanking should save to system clipboard (only works with macvim)
 set clipboard=unnamed
+" to toggle when pasting from clipboard
+set pastetoggle=<F10>

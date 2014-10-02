@@ -1,0 +1,7 @@
+[user]
+	email = michael@firstiwaslike.com
+	name = Michael Klein
+[color]
+	ui = true
+[push]
+	default = simple
