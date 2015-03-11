@@ -40,6 +40,7 @@ Bundle 'wikitopian/hardmode'
 Bundle 'pangloss/vim-javascript'
 Bundle 'bling/vim-airline'
 Bundle 'Raimondi/delimitMate'
+Bundle 'fatih/vim-go'
 
 " make html edition work in a sane way
 Bundle 'tristen/vim-sparkup'
@@ -208,7 +209,7 @@ map <leader>w :call RunLastSpec()<CR>
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " Hard Mode per default
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " make pasting from clipboard work (no indents etc.)
 " set paste

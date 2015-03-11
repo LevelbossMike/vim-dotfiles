@@ -39,13 +39,16 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # Customize to your needs...
-export PATH=/usr/local/git/bin:/usr/local/bin:$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin:$HOME/bin:/usr/local/mysql/bin
+export PATH=/usr/local/bin:$PATH:$HOME/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/texbin
+
+# use vim as editor
+export EDITOR=vim
 
 # set vi-bindings
 bindkey -v
 
 . `brew --prefix`/etc/profile.d/z.sh
 
-[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
+source $(brew --prefix nvm)/nvm.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
