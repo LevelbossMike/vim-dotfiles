@@ -6,11 +6,11 @@ rm -rf ~/.vim/zgen ~/.vim/bundle
 git clone git@github.com:tarjoilija/zgen.git ~/.vim/zgen
 
 # link rc files
-ln -i ~/.vim/vimrc.local ~/.vimrc
-ln -i ~/.vim/zshrc.local ~/.zshrc
-ln -i ~/.vim/tmux.conf.local ~/.tmux.conf
-ln -i ~/.vim/ackrc.local ~/.ackrc
-ln -i ~/.vim/gitconfig.local ~/.gitconfig
+ln -sf ~/.vim/vimrc.local ~/.vimrc
+ln -sf ~/.vim/zshrc.local ~/.zshrc
+ln -sf ~/.vim/tmux.conf.local ~/.tmux.conf
+ln -sf ~/.vim/ackrc.local ~/.ackrc
+ln -sf ~/.vim/gitconfig.local ~/.gitconfig
 
 # make vi mode work in terminal
 cp ~/.vim/inputrc.local ~/.inputrc
