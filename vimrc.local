@@ -78,11 +78,11 @@ set autoread
 set backspace=2
 
 " Base 16
-let base16colorspace=256 " Access colors present in 256 colorspace
+" don't use a 256 color terminal theme
+" also install macvim
 set t_Co=256 " 256 color mode
 set background=dark
-colorscheme base16-eighties
-
+colorscheme base16-flat
 
 """"""""""""""
 " Whitespace "
