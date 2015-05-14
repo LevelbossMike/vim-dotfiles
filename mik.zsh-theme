@@ -16,4 +16,4 @@ PROMPT='
 %~ $(git_prompt_info) %{$reset_color%}
 ${csuccess} %{$reset_color%}'
 # right prompt
-RPROMPT='%{$fg_bold[red]%}$(rvm_prompt_info) %{$reset_color%}'
+RPROMPT='%{$fg_bold[red]%}($(rbenv_prompt_info)) %{$reset_color%}'

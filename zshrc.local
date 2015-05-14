@@ -7,6 +7,7 @@ if ! zgen saved; then
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/git-prompt
+  zgen oh-my-zsh plugins/rbenv
 
   zgen save
 fi
@@ -34,6 +35,9 @@ source $(brew --prefix nvm)/nvm.sh
 # use z
 . `brew --prefix`/etc/profile.d/z.sh
 
+# use vmware_fusion provider as Vagrant default provider
+export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
+
 ###########
 # Aliases #
 ###########
@@ -45,3 +49,8 @@ alias ta="tmux attach -t"
 
 # git
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
+
+########
+# PATH #
+########
+export PATH="$PATH:$HOME/vert.x-3.0.0-milestone4/bin"
