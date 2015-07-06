@@ -52,8 +52,3 @@ alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 # npm & bower are just horrible
 alias nombom='echo "(╯°□°）╯︵ ┻━┻ " && npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
-
-########
-# PATH #
-########
-export PATH="$PATH:$HOME/vert.x-3.0.0-milestone4/bin"
