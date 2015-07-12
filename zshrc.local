@@ -28,9 +28,8 @@ source "${HOME}/.vim/mik.zsh-theme"
 # Tools #
 #########
 
-# use nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# use nodenv
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 # use z
 . `brew --prefix`/etc/profile.d/z.sh
@@ -52,3 +51,8 @@ alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 # npm & bower are just horrible
 alias nombom='echo "(╯°□°）╯︵ ┻━┻ " && npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
+
+# get vi bindings to work in iex
+# run `\iex` to run iex without rlwrap
+# https://gist.github.com/jfreeze/8894279
+alias iex='rlwrap -a foo iex'
