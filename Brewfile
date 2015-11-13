@@ -1,17 +1,33 @@
 # manage services via `brew services`
 tap "homebrew/services"
 
+#########
+# Fonts #
+#########
+
+# install fonts via homebrew
+tap "caskroom/fonts"
+
+# http://adobe-fonts.github.io/source-code-pro/
+cask "font-source-code-pro"
+# http://font.ubuntu.com/#charset-mono-regular
+cask "font-ubuntu-mono-powerline"
+
+#########
+# Tools #
+#########
+
 brew "macvim", args: ['with-override-system-vim']
+brew "tmux"
 brew "z"
 brew "the_silver_searcher"
-brew "tmux"
+brew "watchman"
 
 brew "postgresql"
 brew "redis"
 # phantomjs via homebrew is broken until
 # https://github.com/Homebrew/homebrew/issues/42249 gets resolved
 # brew "phantomjs"
-brew "watchman"
 
 brew "elixir"
 
@@ -23,7 +39,10 @@ brew "rbenv"
 brew "ruby-build"
 brew "rbenv-gem-rehash"
 
-# casks
+#########
+# Casks #
+#########
+
 brew "caskroom/cask/brew-cask"
 
 cask "seil"
