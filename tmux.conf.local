@@ -39,14 +39,16 @@ bind-key Escape copy-mode
 unbind p
 bind p paste-buffer
 
-# Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy 'v' begin-selection
-bind-key -t vi-copy 'y' copy-pipe 'reattach-to-user-namespace pbcopy'
+# v: begin selection as in Vim
+bind-key -t vi-copy v begin-selection
 
-# Update default binding of `Enter` to also use copy-pipe
+# y: copy (and send to clipboard)
+bind-key -t vi-copy y copy-pipe pbcopy
+
+# Enter: copy (and send to clipboard)
 unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
-#
+bind-key -t vi-copy Enter copy-pipe pbcopy
+
 # reload tmux.conf
 unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
@@ -75,8 +77,4 @@ setw -g monitor-activity on
 set -g visual-activity on
 
 # set default shell to zsh
-set -g default-command "reattach-to-user-namespace $SHELL --login"
 set -g default-shell $SHELL
-
-# make it possible to scroll with the trackpad
-set -g mode-mouse on
