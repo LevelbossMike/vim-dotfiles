@@ -56,3 +56,8 @@ alias nombom='echo "(╯°□°）╯︵ ┻━┻ " && npm cache clear && bower
 # run `\iex` to run iex without rlwrap
 # https://gist.github.com/jfreeze/8894279
 alias iex='rlwrap -a foo iex'
+
+########
+# PATH #
+########
+export PATH="$PATH:$HOME/development/phantomjs-2.0.1-macosx/bin"
