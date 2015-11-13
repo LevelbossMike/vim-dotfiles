@@ -23,3 +23,6 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # to install vundle bundles
 vim +BundleInstall +qall
+
+# change shell to zsh
+chsh -s $(which zsh)
