@@ -1,83 +1,73 @@
-" no compatibilty with legacy vim
-set nocompatible
-
-""""""""""
-" Vundle "
-""""""""""
-" required for vundle
-filetype off
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+""""""""""""
+" vim-plug "
+""""""""""""
+call plug#begin('~/.vim/plugged')
 
 """""""""""
-" Bundles "
+" Plugins "
 """""""""""
-" github repos
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'regedarek/ZoomWin'
-Bundle 'ervandew/supertab'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'gregsexton/gitv'
-Bundle 'godlygeek/tabular'
-Bundle 'kien/ctrlp.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'hallison/vim-markdown'
-Bundle 'duwanis/tomdoc.vim'
-Bundle 'rking/ag.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'zerowidth/vim-copy-as-rtf'
-Bundle 'chriskempson/base16-vim'
-Bundle 'wikitopian/hardmode'
-Bundle 'pangloss/vim-javascript'
-Bundle 'bling/vim-airline'
-Bundle 'Raimondi/delimitMate'
-Bundle 'elixir-lang/vim-elixir'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'regedarek/ZoomWin'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'godlygeek/tabular'
+Plug 'kien/ctrlp.vim'
+Plug 'sjl/gundo.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'hallison/vim-markdown'
+Plug 'rking/ag.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'zerowidth/vim-copy-as-rtf'
+Plug 'wikitopian/hardmode'
+Plug 'pangloss/vim-javascript'
+Plug 'bling/vim-airline'
+Plug 'Raimondi/delimitMate'
+Plug 'elixir-lang/vim-elixir'
+
+"theme (Oceanic-next)
+Plug 'mhartington/oceanic-next'
 
 " make html edition work in a sane way
-Bundle 'tristen/vim-sparkup'
+Plug 'tristen/vim-sparkup'
 " work with handlebars
-Bundle 'nono/vim-handlebars'
+Plug 'nono/vim-handlebars'
+
+" orgmode
+" Plug 'jceb/vim-orgmode'
+" use patched version for now
+Plug 'Ron89/vim-orgmode', { 'branch': 'neovim_support' }
+
+" neovim
+Plug 'benekastah/neomake'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
 """"""""""""""""""""""""""""""""""
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-haml"
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
-"""""""""""
-" /Vundle "
-"""""""""""
-
-" load file type plugins + indentation
-filetype plugin indent on
+call plug#end()
+"
+"""""""""""""
+" /vim-plug "
+"""""""""""""
 
 " set ',' as leader
 let mapleader = ","
-" disable arrow keys because they make 'O' unusably slow
-set noesckeys
-syntax enable
-set encoding=utf-8
-" display incomplete commands
-set showcmd
-" load new files per default (e.q when git-branch was switched)
-set autoread
-" make backspace work like most other apps
-set backspace=2
 
-" Base 16
-" don't use a 256 color terminal theme
-" also install macvim
-set t_Co=256 " 256 color mode
+"""""""""""""
+" Look nice "
+""""""""""""""
+" theme settings
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme OceanicNext
 set background=dark
-colorscheme base16-bright
+let g:airline_theme='oceanicnext'
+
+" show linenumbers
+set number
 
 """"""""""""""
 " Whitespace "
@@ -94,21 +84,24 @@ set colorcolumn=79
 " show end of lines
 set list
 set listchars=tab:\ \ ,trail:·,eol:~
-" show linenumbers
-set number
-
 
 """""""""""""
 " Searching "
 """""""""""""
-" highlight matches
-set hlsearch 
-" to show matches while typing
-set incsearch
 " ignore case on search
 set ignorecase
 " unless they contain at least one capital letter
-set smartcase 
+set smartcase
+
+" dismiss highlighted search items on leader+space
+nnoremap <leader><space> :noh<cr>
+
+"""""""""""""""
+" Keybindings "
+"""""""""""""""
+
+" disable arrow keys because they make 'O' unusably slow
+set noesckeys
 
 """""""""""""""""""""
 " window navigation "
@@ -118,12 +111,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
-" nice moving inside of tex files
-map j gj
-map k gk
-map [Up] gk
-map [Down] gj
+" because neovim is still alpha and without this <C-h> does not work
+" see https://github.com/neovim/neovim/issues/2048
+nmap <BS> <C-W>h
 
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
@@ -137,17 +127,16 @@ map ä <C-W>>
 """"""""
 " misc "
 """"""""
-" save when focus is lost
-au FocusLost * :wa
-
-" dismiss highlighted search items on leader+space
-nnoremap <leader><space> :noh<cr>
-
 " no need for swapfiles¬
 set noswapfile
 
 " f9 to turn on/off highlighting of the current line
 noremap <silent><f9> :set cursorline!<cr>
+
+"""""""""""""""""
+" Terminal mode "
+"""""""""""""""""
+tnoremap <leader><ESC> <C-\><C-n>
 
 """"""""""""""""""""""""
 " plugin customization "
@@ -175,7 +164,6 @@ set wildignore+=*/tmp/*,tmp,node_modules,*/dist
 " map `;` to open ctrlp in buffermode
 nnoremap ; :CtrlPBuffer<CR>
 
-
 " make ZoomWin work on <leader>0
 map <leader>0 :ZoomWin<CR>
 
@@ -197,3 +185,16 @@ set pastetoggle=<F10>
 
 " Use powerline symbols
 let g:airline_powerline_fonts = 1
+
+"""""""""""
+" neomake "
+"""""""""""
+" lint on saving a buffer
+autocmd! BufWritePost * Neomake
+" open automatically when there are errors
+let g:neomake_open_list = 2
+" jshint for js files
+autocmd FileType javascript let g:neomake_javascript_enabled_makers = ['jshint']
+" show errors for warnings/errors
+let g:neomake_warning_sign = { 'text': '->', 'texthl': 'WarningMsg', }
+let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }

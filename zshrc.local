@@ -24,6 +24,11 @@ export EDITOR=vim
 
 source "${HOME}/.vim/mik.zsh-theme"
 
+############
+# ENV vars #
+############
+source "${HOME}/.envs"
+
 #########
 # Tools #
 #########
@@ -35,12 +40,14 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 . `brew --prefix`/etc/profile.d/z.sh
 
 # use vmware_fusion provider as Vagrant default provider
-export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
+# export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
 
 ###########
 # Aliases #
 ###########
 
+# nvim is the new vim
+alias vim="nvim"
 # tmux
 alias t="tmux -u" # run with utf-8 enabled!
 alias tl="tmux ls"

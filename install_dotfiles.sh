@@ -11,6 +11,7 @@ ln -sf ~/.vim/zshrc.local ~/.zshrc
 ln -sf ~/.vim/tmux.conf.local ~/.tmux.conf
 ln -sf ~/.vim/ackrc.local ~/.ackrc
 ln -sf ~/.vim/gitconfig.local ~/.gitconfig
+ln -sf ~/.vim/nvim_init.vim ~/.config/nvim/init.vim
 
 # make vi mode work in terminal
 cp ~/.vim/inputrc.local ~/.inputrc
@@ -19,10 +20,10 @@ cp ~/.vim/inputrc.local ~/.inputrc
 cp ~/.vim/editrc.local ~/.editrc
 
 # install vundle for managing vim-plugins
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # to install vundle bundles
-vim +BundleInstall +qall
+# vim +BundleInstall +qall
 
 # change shell to zsh
 chsh -s $(which zsh)

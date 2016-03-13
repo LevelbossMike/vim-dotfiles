@@ -78,3 +78,5 @@ set -g visual-activity on
 
 # set default shell to zsh
 set -g default-shell $SHELL
+# enable truecolor support -> https://github.com/tmux/tmux/pull/112/commits
+set-option -ga terminal-overrides ",xterm-256color:Tc"
