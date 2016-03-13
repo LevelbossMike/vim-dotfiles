@@ -1,6 +1,9 @@
 # manage services via `brew services`
 tap "homebrew/services"
 
+# get cask
+tap "caskroom/cask"
+
 #########
 # Fonts #
 #########
@@ -17,17 +20,16 @@ cask "font-ubuntu-mono-powerline"
 # Tools #
 #########
 
-brew "macvim", args: ['with-override-system-vim']
-brew "tmux"
+tap "neovim/neovim"
+brew "neovim", args: ['HEAD']
+brew "tmux", args: ['HEAD']
 brew "z"
 brew "the_silver_searcher"
 brew "watchman"
 
 brew "postgresql"
 brew "redis"
-# phantomjs via homebrew is broken until
-# https://github.com/Homebrew/homebrew/issues/42249 gets resolved
-# brew "phantomjs"
+brew "phantomjs"
 
 brew "elixir"
 
@@ -42,8 +44,6 @@ brew "rbenv-gem-rehash"
 #########
 # Casks #
 #########
-
-brew "caskroom/cask/brew-cask"
 
 cask "seil"
 cask "spark"
