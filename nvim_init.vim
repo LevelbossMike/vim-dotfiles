@@ -40,6 +40,7 @@ Plug 'Ron89/vim-orgmode', { 'branch': 'neovim_support' }
 
 " neovim
 Plug 'benekastah/neomake'
+Plug 'Shougo/deoplete.nvim'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
@@ -198,3 +199,9 @@ autocmd FileType javascript let g:neomake_javascript_enabled_makers = ['jshint']
 " show errors for warnings/errors
 let g:neomake_warning_sign = { 'text': '->', 'texthl': 'WarningMsg', }
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
+
+""""""""""""
+" Deoplete "
+""""""""""""
+
+let g:deoplete#enable_at_startup = 1
