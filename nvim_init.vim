@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 """""""""""
 Plug 'vim-scripts/YankRing.vim'
 Plug 'regedarek/ZoomWin'
+Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
@@ -22,7 +23,11 @@ Plug 'wikitopian/hardmode'
 Plug 'pangloss/vim-javascript'
 Plug 'bling/vim-airline'
 Plug 'Raimondi/delimitMate'
+
+" elixir
 Plug 'elixir-lang/vim-elixir'
+Plug 'thinca/vim-ref'
+Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
 
 "theme (Oceanic-next)
 Plug 'mhartington/oceanic-next'
@@ -56,8 +61,8 @@ call plug#end()
 
 " set ',' as leader
 let mapleader = ","
-" use <space> as localleader for orgmode
-let maplocalleader = "\<space>"
+" use ',' as localleader for orgmode
+let maplocalleader = ";"
 
 """""""""""""
 " Look nice "
@@ -205,7 +210,5 @@ let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 " Deoplete "
 """"""""""""
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#disable_auto_complete = 1
-inoremap <silent><expr> <Tab>
-		\ pumvisible() ? "\<C-n>" :
-		\ deoplete#mappings#manual_complete()
+" use supertab for running through deoplete
+let g:SuperTabDefaultCompletionType = '<c-n>'
