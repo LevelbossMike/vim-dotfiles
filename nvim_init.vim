@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
 """""""""""
 Plug 'vim-scripts/YankRing.vim'
 Plug 'regedarek/ZoomWin'
-Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
@@ -57,6 +56,8 @@ call plug#end()
 
 " set ',' as leader
 let mapleader = ","
+" use <space> as localleader for orgmode
+let maplocalleader = "\<space>"
 
 """""""""""""
 " Look nice "
@@ -203,5 +204,8 @@ let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 """"""""""""
 " Deoplete "
 """"""""""""
-
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#disable_auto_complete = 1
+inoremap <silent><expr> <Tab>
+		\ pumvisible() ? "\<C-n>" :
+		\ deoplete#mappings#manual_complete()
