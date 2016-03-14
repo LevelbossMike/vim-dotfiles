@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 " Plugins "
 """""""""""
 Plug 'vim-scripts/YankRing.vim'
-Plug 'regedarek/ZoomWin'
+Plug 'vim-scripts/zoomwintab.vim'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -38,9 +38,7 @@ Plug 'tristen/vim-sparkup'
 Plug 'nono/vim-handlebars'
 
 " orgmode
-" Plug 'jceb/vim-orgmode'
-" use patched version for now
-Plug 'Ron89/vim-orgmode', { 'branch': 'neovim_support' }
+Plug 'jceb/vim-orgmode'
 
 " neovim
 Plug 'benekastah/neomake'
@@ -171,8 +169,8 @@ set wildignore+=*/tmp/*,tmp,node_modules,*/dist
 " map `;` to open ctrlp in buffermode
 nnoremap ; :CtrlPBuffer<CR>
 
-" make ZoomWin work on <leader>0
-map <leader>0 :ZoomWin<CR>
+" make ZoomWinTabToggle work on <leader>0
+map <leader>0 :ZoomWinTabToggle<CR>
 
 " align selected lines on '='
 map <leader>9 :Tabularize/=<cr>
