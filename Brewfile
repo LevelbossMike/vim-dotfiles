@@ -22,7 +22,7 @@ cask "font-ubuntu-mono-powerline"
 
 tap "neovim/neovim"
 brew "neovim", args: ['HEAD']
-brew "tmux", args: ['HEAD']
+brew "tmux"
 brew "z"
 brew "the_silver_searcher"
 brew "watchman"
@@ -32,6 +32,9 @@ brew "redis"
 brew "phantomjs"
 
 brew "elixir"
+
+# needed for deoplete
+brew "python3"
 
 # manage node versions
 brew 'nodenv'
@@ -45,10 +48,10 @@ brew "rbenv-gem-rehash"
 # Casks #
 #########
 
-cask "seil"
-cask "spark"
-cask "istat-menus"
-cask "slack"
-cask "papers"
-cask "launchbar"
-cask "flux"
+# cask "seil"
+# cask "spark"
+# cask "istat-menus"
+# cask "slack"
+# cask "papers"
+# cask "launchbar"
+# cask "flux"

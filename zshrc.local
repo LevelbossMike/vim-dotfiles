@@ -8,6 +8,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/git-prompt
   zgen oh-my-zsh plugins/rbenv
+  zgen load zsh-users/zsh-syntax-highlighting
 
   zgen save
 fi
