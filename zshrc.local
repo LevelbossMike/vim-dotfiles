@@ -18,6 +18,9 @@ bindkey -v
 # use vim as editor
 export EDITOR=vim
 
+# opt-out of homebrew analytics
+export HOMEBREW_NO_ANALYTICS=1 
+
 ##########
 # Prompt #
 ##########

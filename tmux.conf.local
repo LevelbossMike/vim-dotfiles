@@ -14,8 +14,11 @@ bind l select-pane -R
 
 # sane window splitting
 unbind %
-bind v split-window -h
-bind s split-window -v
+bind v split-window -h -c "#{pane_current_path}"
+bind s split-window -v -c "#{pane_current_path}"
+
+# create window in current directory
+bind c new-window -c "#{pane_current_path}"
 
 # sane resizing of panes
 bind -r H resize-pane -L 5
@@ -78,5 +81,6 @@ set -g visual-activity on
 
 # set default shell to zsh
 set -g default-shell $SHELL
+
 # enable truecolor support -> https://github.com/tmux/tmux/pull/112/commits
 set-option -ga terminal-overrides ",xterm-256color:Tc"

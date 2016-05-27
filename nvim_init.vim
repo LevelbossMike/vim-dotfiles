@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 """""""""""
 " Plugins "
 """""""""""
-Plug 'vim-scripts/YankRing.vim'
+" Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/zoomwintab.vim'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
@@ -31,6 +31,9 @@ Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
 
 "theme (Oceanic-next)
 Plug 'mhartington/oceanic-next'
+"theme (onedark)
+Plug 'joshdick/onedark.vim'
+Plug 'joshdick/airline-onedark.vim'
 
 " make html edition work in a sane way
 Plug 'tristen/vim-sparkup'
@@ -67,6 +70,8 @@ let maplocalleader = ";"
 """"""""""""""
 " theme settings
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" colorscheme onedark
+" let g:airline_theme='onedark'
 colorscheme OceanicNext
 set background=dark
 let g:airline_theme='oceanicnext'
