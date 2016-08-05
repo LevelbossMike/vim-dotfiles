@@ -37,14 +37,16 @@ source "${HOME}/.envs"
 # Tools #
 #########
 
-# use nodenv
-if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-
 # use z
 . `brew --prefix`/etc/profile.d/z.sh
 
-# use vmware_fusion provider as Vagrant default provider
-# export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
+# use autocompletion for gcloud tool (google-cloud-sdk) if available
+if command -v gcloud > /dev/null; then
+  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+else
+  echo "Gooogle Cloud SDK not installed. You can install via cask."
+fi
 
 ###########
 # Aliases #
@@ -71,4 +73,5 @@ alias iex='rlwrap -a foo iex'
 ########
 # PATH #
 ########
-export PATH="$PATH:$HOME/development/phantomjs-2.0.1-macosx/bin"
+export NVM_DIR="${HOME}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
