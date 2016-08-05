@@ -17,10 +17,11 @@ fi
 bindkey -v
 
 # use vim as editor
-export EDITOR=vim
+export EDITOR=nvim
+export PSQL_EDITOR=nvim
 
 # opt-out of homebrew analytics
-export HOMEBREW_NO_ANALYTICS=1 
+export HOMEBREW_NO_ANALYTICS=1
 
 ##########
 # Prompt #
@@ -39,6 +40,10 @@ source "${HOME}/.envs"
 
 # use z
 . `brew --prefix`/etc/profile.d/z.sh
+
+# use nvm
+export NVM_DIR="${HOME}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # use autocompletion for gcloud tool (google-cloud-sdk) if available
 if command -v gcloud > /dev/null; then
@@ -73,5 +78,5 @@ alias iex='rlwrap -a foo iex'
 ########
 # PATH #
 ########
-export NVM_DIR="${HOME}/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# PATH customization goes here

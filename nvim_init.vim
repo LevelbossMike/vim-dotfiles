@@ -26,8 +26,7 @@ Plug 'Raimondi/delimitMate'
 
 " elixir
 Plug 'elixir-lang/vim-elixir'
-Plug 'thinca/vim-ref'
-Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
+Plug 'slashmili/alchemist.vim'
 
 "theme (Oceanic-next)
 Plug 'mhartington/oceanic-next'
@@ -69,7 +68,9 @@ let maplocalleader = ";"
 " Look nice "
 """"""""""""""
 " theme settings
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+if (has("termguicolors"))
+  set termguicolors
+endif
 " colorscheme onedark
 " let g:airline_theme='onedark'
 colorscheme OceanicNext
@@ -208,6 +209,10 @@ autocmd FileType javascript let g:neomake_javascript_enabled_makers = ['jshint']
 " show errors for warnings/errors
 let g:neomake_warning_sign = { 'text': '->', 'texthl': 'WarningMsg', }
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
+
+" linting with mix breaks phoenix live reload
+" https://github.com/phoenixframework/phoenix/issues/1165
+let g:neomake_elixir_enabled_makers = []
 
 """"""""""""
 " Deoplete "
