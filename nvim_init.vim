@@ -21,8 +21,12 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'zerowidth/vim-copy-as-rtf'
 Plug 'wikitopian/hardmode'
 Plug 'pangloss/vim-javascript'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'Raimondi/delimitMate'
+
+Plug 'kchmck/vim-coffee-script'
+Plug 'yalesov/vim-emblem'
 
 " elixir
 Plug 'elixir-lang/vim-elixir'
@@ -31,8 +35,8 @@ Plug 'slashmili/alchemist.vim'
 "theme (Oceanic-next)
 Plug 'mhartington/oceanic-next'
 "theme (onedark)
-Plug 'joshdick/onedark.vim'
-Plug 'joshdick/airline-onedark.vim'
+" Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/airline-onedark.vim'
 
 " make html edition work in a sane way
 Plug 'tristen/vim-sparkup'
@@ -62,7 +66,7 @@ call plug#end()
 " set ',' as leader
 let mapleader = ","
 " use ',' as localleader for orgmode
-let maplocalleader = ";"
+" let maplocalleader = ";"
 
 """""""""""""
 " Look nice "
@@ -74,8 +78,6 @@ endif
 " colorscheme onedark
 " let g:airline_theme='onedark'
 colorscheme OceanicNext
-set background=dark
-let g:airline_theme='oceanicnext'
 
 " show linenumbers
 set number
@@ -196,6 +198,7 @@ set pastetoggle=<F10>
 
 " Use powerline symbols
 let g:airline_powerline_fonts = 1
+let g:airline_theme='base16_ocean'
 
 """""""""""
 " neomake "
@@ -204,8 +207,6 @@ let g:airline_powerline_fonts = 1
 autocmd! BufWritePost * Neomake
 " open automatically when there are errors
 let g:neomake_open_list = 2
-" jshint for js files
-autocmd FileType javascript let g:neomake_javascript_enabled_makers = ['jshint']
 " show errors for warnings/errors
 let g:neomake_warning_sign = { 'text': '->', 'texthl': 'WarningMsg', }
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
