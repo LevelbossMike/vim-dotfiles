@@ -26,7 +26,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Raimondi/delimitMate'
 
 Plug 'kchmck/vim-coffee-script'
-Plug 'yalesov/vim-emblem'
 
 " elixir
 Plug 'elixir-lang/vim-elixir'
