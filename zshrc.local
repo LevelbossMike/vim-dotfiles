@@ -75,6 +75,11 @@ alias nombom='echo "(╯°□°）╯︵ ┻━┻ " && npm cache clear && bower
 # https://gist.github.com/jfreeze/8894279
 alias iex='rlwrap -a foo iex'
 
+ctbe(){
+  export GC_OOB_ENABLED=0
+  RAILS_ENV='development' WEB_CONCURRENCY=1 foreman start -f Procfile.development
+}
+
 ########
 # PATH #
 ########
