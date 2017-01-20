@@ -4,3 +4,4 @@ coffee=.coffee
 haml=.haml
 --type-set
 sass=.sass,.scss
+--ignore-dir=tmp
