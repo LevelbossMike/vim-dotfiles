@@ -112,9 +112,6 @@ nnoremap <leader><space> :noh<cr>
 " Keybindings "
 """""""""""""""
 
-" disable arrow keys because they make 'O' unusably slow
-set noesckeys
-
 """""""""""""""""""""
 " window navigation "
 """""""""""""""""""""
@@ -190,7 +187,7 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " make pasting from clipboard work (no indents etc.)
 " set paste
-" yanking should save to system clipboard (only works with macvim)
+" yanking should save to system clipboard
 set clipboard=unnamed
 " to toggle when pasting from clipboard
 set pastetoggle=<F10>
