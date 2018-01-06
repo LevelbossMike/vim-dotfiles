@@ -42,15 +42,9 @@ bind-key Escape copy-mode
 unbind p
 bind p paste-buffer
 
-# v: begin selection as in Vim
-bind-key -t vi-copy v begin-selection
-
-# y: copy (and send to clipboard)
-bind-key -t vi-copy y copy-pipe pbcopy
-
-# Enter: copy (and send to clipboard)
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe pbcopy
+# copy paste
+bind-key -Tcopy-mode-vi 'v' send-keys -X begin-selection
+bind-key -Tcopy-mode-vi 'y' send-keys -X copy-pipe-and-cancel pbcopy
 
 # reload tmux.conf
 unbind r
