@@ -19,13 +19,10 @@ Plug 'hallison/vim-markdown'
 Plug 'rking/ag.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'zerowidth/vim-copy-as-rtf'
-Plug 'wikitopian/hardmode'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Raimondi/delimitMate'
-
-Plug 'kchmck/vim-coffee-script'
 
 " elixir
 Plug 'elixir-lang/vim-elixir'
@@ -33,21 +30,19 @@ Plug 'slashmili/alchemist.vim'
 
 "theme (Oceanic-next)
 Plug 'mhartington/oceanic-next'
-"theme (onedark)
-" Plug 'joshdick/onedark.vim'
-" Plug 'joshdick/airline-onedark.vim'
 
 " make html edition work in a sane way
 Plug 'tristen/vim-sparkup'
 " work with handlebars
 Plug 'nono/vim-handlebars'
 
-" orgmode
-Plug 'jceb/vim-orgmode'
-
-" neovim
-Plug 'benekastah/neomake'
+""""""""""
+" neovim "
+""""""""""
+" Plug 'benekastah/neomake'
 Plug 'Shougo/deoplete.nvim'
+" linting
+Plug 'w0rp/ale'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
@@ -63,9 +58,7 @@ call plug#end()
 """""""""""""
 
 " set ',' as leader
-let mapleader = ","
-" use ',' as localleader for orgmode
-" let maplocalleader = ";"
+let mapleader=","
 
 """""""""""""
 " Look nice "
@@ -74,8 +67,7 @@ let mapleader = ","
 if (has("termguicolors"))
   set termguicolors
 endif
-" colorscheme onedark
-" let g:airline_theme='onedark'
+
 colorscheme OceanicNext
 
 " show linenumbers
@@ -153,15 +145,15 @@ tnoremap <leader><ESC> <C-\><C-n>
 " graphical vim undo gundo
 nnoremap <F4> :GundoToggle<CR>
 " close Gundo on revert
-let g:gundo_close_on_revert = 1
+let g:gundo_close_on_revert=1
 
 " NERDTree customization
 map <leader><TAB> :<C-U>NERDTreeToggle<CR>
-let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 
 " NERDCommenter - always use one space between comment and code
-let NERDSpaceDelims = 1
+let NERDSpaceDelims=1
 
 " show YankRing history
 nnoremap <silent> <F1> :YRShow<cr>
@@ -180,41 +172,27 @@ map <leader>0 :ZoomWinTabToggle<CR>
 " align selected lines on '='
 map <leader>9 :Tabularize/=<cr>
 
-" Hard Mode
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-
-" Hard Mode per default
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
-" make pasting from clipboard work (no indents etc.)
-" set paste
 " yanking should save to system clipboard
 set clipboard=unnamed
 " to toggle when pasting from clipboard
 set pastetoggle=<F10>
 
 " Use powerline symbols
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 let g:airline_theme='base16_ocean'
 
-"""""""""""
-" neomake "
-"""""""""""
-" lint on saving a buffer
-autocmd! BufWritePost * Neomake
-" open automatically when there are errors
-let g:neomake_open_list = 2
-" show errors for warnings/errors
-let g:neomake_warning_sign = { 'text': '->', 'texthl': 'WarningMsg', }
-let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
-
-" linting with mix breaks phoenix live reload
-" https://github.com/phoenixframework/phoenix/issues/1165
-let g:neomake_elixir_enabled_makers = []
+"""""""
+" Ale "
+"""""""
+" show linting erros in quickfix list
+let g:ale_set_loclist=0
+let g:ale_set_quickfix=1
+"show errors in list
+let g:ale_open_list=1
 
 """"""""""""
 " Deoplete "
 """"""""""""
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup=1
 " use supertab for running through deoplete
-let g:SuperTabDefaultCompletionType = '<c-n>'
+let g:SuperTabDefaultCompletionType='<c-n>'
