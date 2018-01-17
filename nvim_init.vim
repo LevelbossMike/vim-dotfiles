@@ -158,6 +158,7 @@ let g:gundo_close_on_revert = 1
 " NERDTree customization
 map <leader><TAB> :<C-U>NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen = 1
+let NERDTreeShowHidden=1
 
 " NERDCommenter - always use one space between comment and code
 let NERDSpaceDelims = 1
