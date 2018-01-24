@@ -3,7 +3,7 @@ cd ~
 rm -rf ~/.vim/zgen ~/.vim/bundle
 
 # install zgen
-git clone git@github.com:tarjoilija/zgen.git ~/.vim/zgen
+git clone https://github.com/tarjoilija/zgen.git ~/.vim/zgen
 
 # link rc files
 ln -sf ~/.vim/vimrc.local ~/.vimrc
