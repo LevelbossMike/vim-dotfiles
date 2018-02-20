@@ -4,10 +4,8 @@ source "${HOME}/.vim/zgen/zgen.zsh"
 
 if ! zgen saved; then
   echo "Creating a zgen save"
-  zgen oh-my-zsh
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/git-prompt
-  zgen oh-my-zsh plugins/rbenv
+
+  zgen load denysdovhan/spaceship-prompt spaceship
   zgen load zsh-users/zsh-syntax-highlighting
 
   zgen save
@@ -26,8 +24,12 @@ export HOMEBREW_NO_ANALYTICS=1
 ##########
 # Prompt #
 ##########
-
-source "${HOME}/.vim/mik.zsh-theme"
+export SPACESHIP_CHAR_SYMBOL=»
+export SPACESHIP_CHAR_SUFFIX=' '
+export SPACESHIP_PACKAGE_SHOW=false
+export SPACESHIP_VI_MODE_SHOW=false
+export SPACESHIP_KUBECONTEXT_SHOW=false
+export SPACESHIP_AWS_SHOW=false
 
 ############
 # ENV vars #
