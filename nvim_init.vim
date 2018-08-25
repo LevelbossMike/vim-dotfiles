@@ -28,7 +28,12 @@ call dein#add('pangloss/vim-javascript')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 " autocomplete brackets and quotations
-" call dein#add('itmammoth/doorboy.vim')
+call dein#add('itmammoth/doorboy.vim')
+"project wide search and replace
+call dein#add('eugen0329/vim-esearch')
+"gitgutter
+call dein#add('airblade/vim-gitgutter')
+
 
 " elixir
 " Plug 'elixir-lang/vim-elixir'
@@ -56,6 +61,7 @@ call dein#add('w0rp/ale')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
+
 " Has to be last according to docs
 call dein#add('ryanoasis/vim-devicons')
 
@@ -88,6 +94,7 @@ colorscheme OceanicNext
 
 " show linenumbers
 set number
+set numberwidth=1
 
 """"""""""""""
 " Whitespace "
@@ -222,3 +229,27 @@ let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:WebDevIconsOS = 'Darwin'
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+
+""""""""""""""""""""
+" esearch settings "
+""""""""""""""""""""
+let g:esearch#cmdline#help_prompt = 1
+let g:esearch#cmdline#dir_icon = ''
+let g:esearch = {
+\ 'adapter':    'ag',
+\ 'backend':    'nvim',
+\ 'use':        ['visual', 'hlsearch', 'last'],
+\}
+
+let g:NERDTreeGitStatusIndicatorMap = {
+\ 'Modified'  : '✹',
+\ 'Staged'    : '✚',
+\ 'Untracked' : '✭',
+\ 'Renamed'   : '➜',
+\ 'Unmerged'  : '═',
+\ 'Deleted'   : '✖',
+\ 'Dirty'     : '✗',
+\ 'Clean'     : '✔︎',
+\ 'Ignored'   : '',
+\ 'Unknown'   : '?'
+\ }
