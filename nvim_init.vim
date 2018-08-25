@@ -24,16 +24,31 @@ call dein#add('hallison/vim-markdown')
 call dein#add('rking/ag.vim')
 call dein#add('terryma/vim-multiple-cursors')
 call dein#add('zerowidth/vim-copy-as-rtf')
-call dein#add('pangloss/vim-javascript')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
+
 " autocomplete brackets and quotations
 call dein#add('itmammoth/doorboy.vim')
+
 "project wide search and replace
 call dein#add('eugen0329/vim-esearch')
+
 "gitgutter
 call dein#add('airblade/vim-gitgutter')
 
+" For async completion
+call dein#add('Shougo/deoplete.nvim')
+
+" For Denite features
+call dein#add('Shougo/denite.nvim')
+
+" javascript
+call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
+call dein#add('pangloss/vim-javascript')
+call dein#add('heavenshell/vim-jsdoc')
+call dein#add('elzr/vim-json')
+call dein#add('HerringtonDarkholme/yats.vim')
+call dein#add('Quramy/vison')
 
 " elixir
 " Plug 'elixir-lang/vim-elixir'
@@ -50,8 +65,6 @@ call dein#add('nono/vim-handlebars')
 """"""""""
 " neovim "
 """"""""""
-" Plug 'benekastah/neomake'
-call dein#add('Shougo/deoplete.nvim')
 " linting
 call dein#add('w0rp/ale')
 
