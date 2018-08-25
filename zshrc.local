@@ -47,6 +47,8 @@ source "${HOME}/.envs"
 export NODENV_ROOT=/usr/local/var/nodenv
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
+# use rbenv
+eval "$(rbenv init -)"
 # use autocompletion for gcloud tool (google-cloud-sdk) if available
 if command -v gcloud > /dev/null; then
   source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
@@ -70,6 +72,8 @@ alias ta="tmux attach -t"
 alias e="node_modules/ember-cli/bin/ember"
 
 # git
+alias gb='git branch'
+alias gco='git checkout'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 # npm & bower are just horrible
