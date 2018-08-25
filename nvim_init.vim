@@ -1,60 +1,77 @@
-""""""""""""
-" vim-plug "
-""""""""""""
+""""""""""""""""""""""""
+" dein plugin manager "
+""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
+  call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
+  call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
+endif
+
+set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
+call dein#begin(expand('~/.config/nvim'))
 
 """""""""""
 " Plugins "
 """""""""""
 " Plug 'vim-scripts/YankRing.vim'
-Plug 'vim-scripts/zoomwintab.vim'
-Plug 'ervandew/supertab'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'godlygeek/tabular'
-Plug 'kien/ctrlp.vim'
-Plug 'sjl/gundo.vim'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'hallison/vim-markdown'
-Plug 'rking/ag.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'zerowidth/vim-copy-as-rtf'
-Plug 'pangloss/vim-javascript'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'Raimondi/delimitMate'
+call dein#add('vim-scripts/zoomwintab.vim')
+call dein#add('ervandew/supertab')
+call dein#add('scrooloose/nerdcommenter')
+call dein#add('scrooloose/nerdtree')
+call dein#add('godlygeek/tabular')
+call dein#add('kien/ctrlp.vim')
+call dein#add('sjl/gundo.vim')
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('hallison/vim-markdown')
+call dein#add('rking/ag.vim')
+call dein#add('terryma/vim-multiple-cursors')
+call dein#add('zerowidth/vim-copy-as-rtf')
+call dein#add('pangloss/vim-javascript')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+call dein#add('Raimondi/delimitMate')
 
 " elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
+" Plug 'elixir-lang/vim-elixir'
+" Plug 'slashmili/alchemist.vim'
 
 "theme (Oceanic-next)
-Plug 'mhartington/oceanic-next'
+call dein#add('mhartington/oceanic-next')
 
 " make html edition work in a sane way
-Plug 'tristen/vim-sparkup'
+call dein#add('tristen/vim-sparkup')
 " work with handlebars
-Plug 'nono/vim-handlebars'
+call dein#add('nono/vim-handlebars')
 
 """"""""""
 " neovim "
 """"""""""
 " Plug 'benekastah/neomake'
-Plug 'Shougo/deoplete.nvim'
+call dein#add('Shougo/deoplete.nvim')
 " linting
-Plug 'w0rp/ale'
+call dein#add('w0rp/ale')
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
 """"""""""""""""""""""""""""""""""
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-repeat')
+" Has to be last according to docs
+call dein#add('ryanoasis/vim-devicons')
 
-call plug#end()
-"
+if dein#check_install()
+  call dein#install()
+  let pluginsExist=1
+endif
+
+call dein#end()
+
+" dein expects this
+filetype plugin indent on
+
 """""""""""""
-" /vim-plug "
+" /dein "
 """""""""""""
 
 " set ',' as leader
