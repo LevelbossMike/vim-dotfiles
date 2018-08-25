@@ -13,14 +13,12 @@ call dein#begin(expand('~/.config/nvim'))
 """""""""""
 " Plugins "
 """""""""""
-" Plug 'vim-scripts/YankRing.vim'
+call dein#add('Shougo/dein.vim')
 call dein#add('vim-scripts/zoomwintab.vim')
 call dein#add('ervandew/supertab')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('scrooloose/nerdtree')
-call dein#add('godlygeek/tabular')
-call dein#add('kien/ctrlp.vim')
-call dein#add('sjl/gundo.vim')
+call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('hallison/vim-markdown')
 call dein#add('rking/ag.vim')
@@ -29,7 +27,8 @@ call dein#add('zerowidth/vim-copy-as-rtf')
 call dein#add('pangloss/vim-javascript')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
-call dein#add('Raimondi/delimitMate')
+" autocomplete brackets and quotations
+" call dein#add('itmammoth/doorboy.vim')
 
 " elixir
 " Plug 'elixir-lang/vim-elixir'
@@ -213,3 +212,13 @@ let g:ale_open_list=1
 let g:deoplete#enable_at_startup=1
 " use supertab for running through deoplete
 let g:SuperTabDefaultCompletionType='<c-n>'
+""""""""""""
+" Vim-Devicons "
+""""""""""""
+let g:NERDTreeGitStatusNodeColorization = 1
+" 
+let g:webdevicons_enable_denite = 0
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsOS = 'Darwin'
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
