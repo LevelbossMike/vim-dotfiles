@@ -1,9 +1,3 @@
-# manage services via `brew services`
-tap "homebrew/services"
-
-# get cask
-tap "caskroom/cask"
-
 #########
 # Fonts #
 #########
@@ -15,13 +9,14 @@ tap "caskroom/fonts"
 cask "font-source-code-pro"
 # http://font.ubuntu.com/#charset-mono-regular
 cask "font-ubuntu-mono-powerline"
+# patched fira code
+cask "font-firacode-nerd-font"
 
 #########
 # Tools #
 #########
 
-tap "neovim/neovim"
-brew "neovim", args: ['HEAD']
+brew "neovim"
 brew "tmux"
 brew "z"
 brew "the_silver_searcher"
@@ -29,7 +24,6 @@ brew "watchman"
 
 brew "postgresql"
 brew "redis"
-brew "phantomjs"
 
 brew "elixir"
 
@@ -41,17 +35,13 @@ brew 'nodenv'
 
 # manage ruby versions
 brew "rbenv"
-brew "ruby-build"
-brew "rbenv-gem-rehash"
 
 #########
 # Casks #
 #########
 
-# cask "seil"
 # cask "spark"
 # cask "istat-menus"
 # cask "slack"
 # cask "papers"
 # cask "launchbar"
-# cask "flux"
