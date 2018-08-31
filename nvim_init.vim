@@ -13,17 +13,31 @@ call dein#begin(expand('~/.config/nvim'))
 """""""""""
 " Plugins "
 """""""""""
+" manage plugins
 call dein#add('Shougo/dein.vim')
+" utility commands for dein
+call dein#add('haya14busa/dein-command.vim')
+
+" zoom into a buffer
 call dein#add('vim-scripts/zoomwintab.vim')
 call dein#add('ervandew/supertab')
+" easy comments
 call dein#add('scrooloose/nerdcommenter')
+" filetree
 call dein#add('scrooloose/nerdtree')
+" fuzzy file search
 call dein#add('ctrlpvim/ctrlp.vim')
+" intent-guides
 call dein#add('nathanaelkane/vim-indent-guides')
+" heasy markdown
 call dein#add('hallison/vim-markdown')
+" search inside of vim
 call dein#add('rking/ag.vim')
+" multiple cursors with ctrl-n
 call dein#add('terryma/vim-multiple-cursors')
+" easy copy code for presentations
 call dein#add('zerowidth/vim-copy-as-rtf')
+" nice ui for open files
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 
@@ -44,11 +58,12 @@ call dein#add('Shougo/denite.nvim')
 
 " javascript
 call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
+" syntax highlighting
 call dein#add('pangloss/vim-javascript')
+" support jsdoc
 call dein#add('heavenshell/vim-jsdoc')
-call dein#add('elzr/vim-json')
+" typescript syntax
 call dein#add('HerringtonDarkholme/yats.vim')
-call dein#add('Quramy/vison')
 
 " elixir
 " Plug 'elixir-lang/vim-elixir'
@@ -74,9 +89,6 @@ call dein#add('w0rp/ale')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
-
-" Has to be last according to docs
-call dein#add('ryanoasis/vim-devicons')
 
 if dein#check_install()
   call dein#install()
@@ -104,6 +116,9 @@ if (has("termguicolors"))
 endif
 
 colorscheme OceanicNext
+
+" faster updatetime
+set updatetime=300
 
 " show linenumbers
 set number
