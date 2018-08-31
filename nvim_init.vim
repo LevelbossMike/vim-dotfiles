@@ -72,6 +72,9 @@ call dein#add('HerringtonDarkholme/yats.vim')
 "theme (Oceanic-next)
 call dein#add('mhartington/oceanic-next')
 
+"theme (oneDark)
+call dein#add('joshdick/onedark.vim')
+
 " make html edition work in a sane way
 call dein#add('tristen/vim-sparkup')
 " work with handlebars
@@ -115,7 +118,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme OceanicNext
+colorscheme onedark
 
 " faster updatetime
 set updatetime=300
