@@ -7,8 +7,6 @@ tap "caskroom/fonts"
 
 # http://adobe-fonts.github.io/source-code-pro/
 cask "font-source-code-pro"
-# http://font.ubuntu.com/#charset-mono-regular
-cask "font-ubuntu-mono-powerline"
 # patched fira code
 cask "font-firacode-nerd-font"
 
@@ -35,6 +33,12 @@ brew 'nodenv'
 
 # manage ruby versions
 brew "rbenv"
+
+# node package-management
+brew "yarn"
+
+# better curl
+brew "httpie"
 
 #########
 # Casks #
