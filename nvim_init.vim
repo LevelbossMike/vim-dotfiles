@@ -1,110 +1,59 @@
-""""""""""""""""""""""""
-" dein plugin manager "
-""""""""""""""""""""""""
+""""""""""""
+" vim-plug "
+""""""""""""
 call plug#begin('~/.vim/plugged')
-if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
-  call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
-  call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
-endif
-
-set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
-call dein#begin(expand('~/.config/nvim'))
 
 """""""""""
 " Plugins "
 """""""""""
-" manage plugins
-call dein#add('Shougo/dein.vim')
-" utility commands for dein
-call dein#add('haya14busa/dein-command.vim')
-
-" zoom into a buffer
-call dein#add('vim-scripts/zoomwintab.vim')
-call dein#add('ervandew/supertab')
-" easy comments
-call dein#add('scrooloose/nerdcommenter')
-" filetree
-call dein#add('scrooloose/nerdtree')
-" fuzzy file search
-call dein#add('ctrlpvim/ctrlp.vim')
-" intent-guides
-call dein#add('nathanaelkane/vim-indent-guides')
-" heasy markdown
-call dein#add('hallison/vim-markdown')
-" search inside of vim
-call dein#add('rking/ag.vim')
-" multiple cursors with ctrl-n
-call dein#add('terryma/vim-multiple-cursors')
-" easy copy code for presentations
-call dein#add('zerowidth/vim-copy-as-rtf')
-" nice ui for open files
-call dein#add('vim-airline/vim-airline')
-call dein#add('vim-airline/vim-airline-themes')
-
-" autocomplete brackets and quotations
-call dein#add('itmammoth/doorboy.vim')
-
-"project wide search and replace
-call dein#add('eugen0329/vim-esearch')
-
-"gitgutter
-call dein#add('airblade/vim-gitgutter')
-
-" For async completion
-call dein#add('Shougo/deoplete.nvim')
-
-" For Denite features
-call dein#add('Shougo/denite.nvim')
-
-" javascript
-call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
-" syntax highlighting
-call dein#add('pangloss/vim-javascript')
-" support jsdoc
-call dein#add('heavenshell/vim-jsdoc')
-" typescript syntax
-call dein#add('HerringtonDarkholme/yats.vim')
+" Plug 'vim-scripts/YankRing.vim'
+Plug 'vim-scripts/zoomwintab.vim'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'godlygeek/tabular'
+Plug 'kien/ctrlp.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'hallison/vim-markdown'
+Plug 'rking/ag.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'zerowidth/vim-copy-as-rtf'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Raimondi/delimitMate'
 
 " elixir
-" Plug 'elixir-lang/vim-elixir'
-" Plug 'slashmili/alchemist.vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 
 "theme (Oceanic-next)
-call dein#add('mhartington/oceanic-next')
-
-"theme (oneDark)
-call dein#add('joshdick/onedark.vim')
+Plug 'mhartington/oceanic-next'
 
 " make html edition work in a sane way
-call dein#add('tristen/vim-sparkup')
+Plug 'tristen/vim-sparkup'
 " work with handlebars
-call dein#add('nono/vim-handlebars')
+Plug 'nono/vim-handlebars'
 
 """"""""""
 " neovim "
 """"""""""
+" Plug 'benekastah/neomake'
+" Plug 'Shougo/deoplete.nvim'
 " linting
-call dein#add('w0rp/ale')
+" Plug 'w0rp/ale'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
 """"""""""""""""""""""""""""""""""
-call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-surround')
-call dein#add('tpope/vim-repeat')
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
-if dein#check_install()
-  call dein#install()
-  let pluginsExist=1
-endif
-
-call dein#end()
-
-" dein expects this
-filetype plugin indent on
-
+call plug#end()
+"
 """""""""""""
-" /dein "
+" /vim-plug "
 """""""""""""
 
 " set ',' as leader
@@ -118,14 +67,10 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme onedark
-
-" faster updatetime
-set updatetime=300
+colorscheme OceanicNext
 
 " show linenumbers
 set number
-set numberwidth=1
 
 """"""""""""""
 " Whitespace "
@@ -196,11 +141,6 @@ tnoremap <leader><ESC> <C-\><C-n>
 """"""""""""""""""""""""
 " plugin customization "
 """"""""""""""""""""""""
-" graphical vim undo gundo
-nnoremap <F4> :GundoToggle<CR>
-" close Gundo on revert
-let g:gundo_close_on_revert=1
-
 " NERDTree customization
 map <leader><TAB> :<C-U>NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen=1
@@ -239,48 +179,14 @@ let g:airline_theme='base16_ocean'
 " Ale "
 """""""
 " show linting erros in quickfix list
-let g:ale_set_loclist=0
-let g:ale_set_quickfix=1
+" let g:ale_set_loclist=0
+" let g:ale_set_quickfix=1
 "show errors in list
-let g:ale_open_list=1
+" let g:ale_open_list=1
 
 """"""""""""
 " Deoplete "
 """"""""""""
-let g:deoplete#enable_at_startup=1
+" let g:deoplete#enable_at_startup=1
 " use supertab for running through deoplete
-let g:SuperTabDefaultCompletionType='<c-n>'
-""""""""""""
-" Vim-Devicons "
-""""""""""""
-let g:NERDTreeGitStatusNodeColorization = 1
-" 
-let g:webdevicons_enable_denite = 0
-let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:WebDevIconsOS = 'Darwin'
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-
-""""""""""""""""""""
-" esearch settings "
-""""""""""""""""""""
-let g:esearch#cmdline#help_prompt = 1
-let g:esearch#cmdline#dir_icon = ''
-let g:esearch = {
-\ 'adapter':    'ag',
-\ 'backend':    'nvim',
-\ 'use':        ['visual', 'hlsearch', 'last'],
-\}
-
-let g:NERDTreeGitStatusIndicatorMap = {
-\ 'Modified'  : '✹',
-\ 'Staged'    : '✚',
-\ 'Untracked' : '✭',
-\ 'Renamed'   : '➜',
-\ 'Unmerged'  : '═',
-\ 'Deleted'   : '✖',
-\ 'Dirty'     : '✗',
-\ 'Clean'     : '✔︎',
-\ 'Ignored'   : '',
-\ 'Unknown'   : '?'
-\ }
+" let g:SuperTabDefaultCompletionType='<c-n>'
