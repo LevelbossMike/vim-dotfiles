@@ -25,9 +25,6 @@ brew "redis"
 
 brew "elixir"
 
-# needed for deoplete
-brew "python3"
-
 # manage node versions
 brew 'nodenv'
 
