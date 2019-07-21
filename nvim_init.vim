@@ -6,42 +6,38 @@ call plug#begin('~/.vim/plugged')
 """""""""""
 " Plugins "
 """""""""""
+"""""""
+" coc "
+"""""""
+" Build from source code by use yarn: https://yarnpkg.com
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+" Coc ember support
+Plug 'nullvoxpopuli/coc-ember', {'do': 'yarn install --frozen-lockfile'}
+" work with hbs in ember
+Plug 'joukevandermaas/vim-ember-hbs'
+
+"""""""""""""""""""
+" Various plugins "
+"""""""""""""""""""
 " Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/zoomwintab.vim'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'godlygeek/tabular'
-Plug 'kien/ctrlp.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'hallison/vim-markdown'
 Plug 'rking/ag.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'zerowidth/vim-copy-as-rtf'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Raimondi/delimitMate'
 
-" elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
+" Typescript syntax highlighting
+Plug 'HerringtonDarkholme/yats.vim'
 
 "theme (Oceanic-next)
 Plug 'mhartington/oceanic-next'
-
-" make html edition work in a sane way
-Plug 'tristen/vim-sparkup'
-" work with handlebars
-Plug 'nono/vim-handlebars'
-
-""""""""""
-" neovim "
-""""""""""
-" Plug 'benekastah/neomake'
-" Plug 'Shougo/deoplete.nvim'
-" linting
-" Plug 'w0rp/ale'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
@@ -175,18 +171,39 @@ set pastetoggle=<F10>
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16_ocean'
 
-"""""""
-" Ale "
-"""""""
-" show linting erros in quickfix list
-" let g:ale_set_loclist=0
-" let g:ale_set_quickfix=1
-"show errors in list
-" let g:ale_open_list=1
+"""""""""""""""""""""
+" Coc customization "
+"""""""""""""""""""""
+" always show signcolum
+set signcolumn=yes
+" smaller updatetime for CursorHold & CursorHoldI
+set updatetime=300
 
-""""""""""""
-" Deoplete "
-""""""""""""
-" let g:deoplete#enable_at_startup=1
-" use supertab for running through deoplete
-" let g:SuperTabDefaultCompletionType='<c-n>'
+" show hover diagnostics coc - mimics gh from vsCode
+nmap gh :call CocAction('diagnosticInfo')<Cr>
+nmap gd :call CocAction('doHover')<Cr>
+
+" Remap for rename current word
+nmap <leader>lr <Plug>(coc-rename)
+
+" Remap keys for gotos
+nmap <silent> <leader>ld <Plug>(coc-definition)
+nmap <silent> <leader>lt <Plug>(coc-type-definition)
+nmap <silent> <leader>li <Plug>(coc-implementation)
+nmap <silent> <leader>lf <Plug>(coc-references)
+
+" fuzzy-find files coc"
+map <leader>t :CocList files<cr>
+" fuzzy-find buffers
+map <leader>b :CocList buffers<cr>
+
+" install the following coc-extensions
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-css',
+  \ 'coc-json',
+  \ 'coc-html',
+  \ 'coc-eslint',
+  \ 'coc-highlight',
+  \ 'coc-pairs'
+\ ]
