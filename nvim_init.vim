@@ -205,5 +205,8 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-eslint',
   \ 'coc-highlight',
-  \ 'coc-pairs'
+  \ 'coc-pairs',
+  \ 'coc-emmet',
+  \ 'coc-git',
+  \ 'coc-elixir'
 \ ]
