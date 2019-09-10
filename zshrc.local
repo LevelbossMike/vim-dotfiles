@@ -1,15 +1,16 @@
 # Use zgen so we can use zsh plugins easily
 # We want to use git-prompt for example
-source "${HOME}/.vim/zgen/zgen.zsh"
 
-if ! zgen saved; then
-  echo "Creating a zgen save"
+########
+# PATH #
+########
 
-  zgen load denysdovhan/spaceship-prompt spaceship
-  zgen load zsh-users/zsh-syntax-highlighting
+# nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
 
-  zgen save
-fi
+##############
+# Ergonomics #
+##############
 
 # vim keybindings
 bindkey -v
@@ -17,9 +18,6 @@ bindkey -v
 # use vim as editor
 export EDITOR=nvim
 export PSQL_EDITOR=nvim
-
-# opt-out of homebrew analytics
-export HOMEBREW_NO_ANALYTICS=1
 
 ##########
 # Prompt #
@@ -39,23 +37,25 @@ source "${HOME}/.envs"
 #########
 # Tools #
 #########
+source "${HOME}/.vim/zgen/zgen.zsh"
+
+if ! zgen saved; then
+  echo "Creating a zgen save"
+
+  zgen load denysdovhan/spaceship-prompt spaceship
+  zgen load zsh-users/zsh-syntax-highlighting
+
+  zgen save
+fi
 
 # use z
-. `brew --prefix`/etc/profile.d/z.sh
+# . `brew --prefix`/etc/profile.d/z.sh
 
 # use nodenv
-export NODENV_ROOT=/usr/local/var/nodenv
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 # use rbenv
 eval "$(rbenv init -)"
-# use autocompletion for gcloud tool (google-cloud-sdk) if available
-if command -v gcloud > /dev/null; then
-  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-else
-  echo "Gooogle Cloud SDK not installed. You can install via cask."
-fi
 
 ###########
 # Aliases #
@@ -76,21 +76,7 @@ alias gb='git branch'
 alias gco='git checkout'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
-# npm & bower are just horrible
-alias nombom='echo "(╯°□°）╯︵ ┻━┻ " && npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
-
 # get vi bindings to work in iex
 # run `\iex` to run iex without rlwrap
 # https://gist.github.com/jfreeze/8894279
 alias iex='rlwrap -a foo iex'
-
-ctbe(){
-  export GC_OOB_ENABLED=0
-  RAILS_ENV='development' WEB_CONCURRENCY=1 foreman start -f Procfile.development
-}
-
-########
-# PATH #
-########
-
-# PATH customization goes here
