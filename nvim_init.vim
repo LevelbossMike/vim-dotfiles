@@ -200,6 +200,7 @@ map <leader>b :CocList buffers<cr>
 " install the following coc-extensions
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
+  \ 'coc-lists',
   \ 'coc-css',
   \ 'coc-json',
   \ 'coc-html',
