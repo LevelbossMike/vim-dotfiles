@@ -5,8 +5,8 @@
 # PATH #
 ########
 
-# nodenv
-export PATH="$HOME/.nodenv/bin:$PATH"
+# nodenv & rbenv
+export PATH="$HOME/.nodenv/bin:$HOME/.rbenv/bin:$PATH"
 
 ##############
 # Ergonomics #
@@ -49,13 +49,13 @@ if ! zgen saved; then
 fi
 
 # use z
-# . `brew --prefix`/etc/profile.d/z.sh
+source "${HOME}/z.sh"
 
 # use nodenv
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 # use rbenv
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ###########
 # Aliases #
