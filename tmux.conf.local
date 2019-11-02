@@ -78,3 +78,12 @@ set -g default-shell $SHELL
 
 # enable truecolor support -> https://github.com/tmux/tmux/pull/112/commits
 set-option -ga terminal-overrides ",xterm-256color:Tc"
+
+#######################
+# Tmux plugin manager #
+#######################
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+run -b '~/.tmux/plugins/tpm/tpm'

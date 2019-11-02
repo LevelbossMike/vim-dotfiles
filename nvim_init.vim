@@ -163,7 +163,7 @@ map <leader>0 :ZoomWinTabToggle<CR>
 map <leader>9 :Tabularize/=<cr>
 
 " yanking should save to system clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 " to toggle when pasting from clipboard
 set pastetoggle=<F10>
 
