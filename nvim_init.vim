@@ -9,11 +9,8 @@ call plug#begin('~/.vim/plugged')
 """""""
 " coc "
 """""""
-" Build from source code by use yarn: https://yarnpkg.com
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Coc ember support
-Plug 'nullvoxpopuli/coc-ember', {'do': 'yarn install --frozen-lockfile'}
 " work with hbs in ember
 Plug 'joukevandermaas/vim-ember-hbs'
 
@@ -22,7 +19,6 @@ Plug 'joukevandermaas/vim-ember-hbs'
 """""""""""""""""""
 " Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/zoomwintab.vim'
-Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -145,12 +141,6 @@ let NERDTreeShowHidden=1
 " NERDCommenter - always use one space between comment and code
 let NERDSpaceDelims=1
 
-" show YankRing history
-nnoremap <silent> <F1> :YRShow<cr>
-inoremap <silent> <F1> <ESC>:YRShow<cr>
-
-" remap ctrlp to <leader>t
-let g:ctrlp_map = '<leader>t'
 " ignore tmp directory for ctrlp
 set wildignore+=*/tmp/*,tmp,node_modules,*/dist
 " map `;` to open ctrlp in buffermode
@@ -159,40 +149,158 @@ nnoremap ; :CtrlPBuffer<CR>
 " make ZoomWinTabToggle work on <leader>0
 map <leader>0 :ZoomWinTabToggle<CR>
 
-" align selected lines on '='
-map <leader>9 :Tabularize/=<cr>
-
 " yanking should save to system clipboard
 set clipboard=unnamedplus
-" to toggle when pasting from clipboard
-set pastetoggle=<F10>
-
+"
 " Use powerline symbols
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16_ocean'
 
+"""""""""""""""""""""""""""""""
+" Coc (stolen from Coc README)"
+"""""""""""""""""""""""""""""""
+
+" if hidden is not set, TextEdit might fail.
+set hidden
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2"
+
+" you will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes"
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Create mappings for function text object, requires document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
 """""""""""""""""""""
 " Coc customization "
 """""""""""""""""""""
-" always show signcolum
-set signcolumn=yes
-" smaller updatetime for CursorHold & CursorHoldI
-set updatetime=300
 
 " show hover diagnostics coc - mimics gh from vsCode
-nmap gh :call CocAction('diagnosticInfo')<Cr>
-nmap gd :call CocAction('doHover')<Cr>
+" nmap gh :call CocAction('diagnosticInfo')<Cr>
 
-" Remap for rename current word
-nmap <leader>lr <Plug>(coc-rename)
+" scroll in floating windows via
+nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
+nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
 
-" Remap keys for gotos
-nmap <silent> <leader>ld <Plug>(coc-definition)
-nmap <silent> <leader>lt <Plug>(coc-type-definition)
-nmap <silent> <leader>li <Plug>(coc-implementation)
-nmap <silent> <leader>lf <Plug>(coc-references)
-
-" fuzzy-find files coc"
+" fuzzy-find files coc
 map <leader>t :CocList files<cr>
 " fuzzy-find buffers
 map <leader>b :CocList buffers<cr>
@@ -209,5 +317,6 @@ let g:coc_global_extensions = [
   \ 'coc-pairs',
   \ 'coc-emmet',
   \ 'coc-git',
-  \ 'coc-elixir'
+  \ 'coc-elixir',
+  \ 'coc-ember'
 \ ]
