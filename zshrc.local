@@ -49,7 +49,7 @@ if ! zgen saved; then
 fi
 
 # use z
-source "${HOME}/z.sh"
+source "${HOME}/tools/z.sh"
 
 # use nodenv
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
