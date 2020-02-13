@@ -3,3 +3,5 @@ bundle/*
 
 zgen/
 plugged/
+sessions/
+.zgen/
