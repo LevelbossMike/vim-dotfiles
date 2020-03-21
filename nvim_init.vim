@@ -28,6 +28,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'elixir-editors/vim-elixir'
 
 " Typescript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
