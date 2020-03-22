@@ -6,7 +6,7 @@
 ########
 
 # nodenv & rbenv
-export PATH="$HOME/.nodenv/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.nodenv/bin:$HOME/.exenv/bin:$HOME/.rbenv/bin:$PATH"
 
 ##############
 # Ergonomics #
@@ -56,6 +56,9 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 # make sure yarn takes precedence over nodenv bins
 export PATH=$HOME/.yarn/bin:$PATH;
 
+# use exenv
+if which exenv > /dev/null; then eval "$(exenv init -)"; fi
+#
 # use rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
