@@ -80,8 +80,3 @@ alias e="node_modules/ember-cli/bin/ember"
 alias gb='git branch'
 alias gco='git checkout'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
-
-# get vi bindings to work in iex
-# run `\iex` to run iex without rlwrap
-# https://gist.github.com/jfreeze/8894279
-alias iex='rlwrap -a foo iex'
