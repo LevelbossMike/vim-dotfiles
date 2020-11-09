@@ -14,6 +14,12 @@ brew upgrade && brew update
 printf "Installing xcode cli utils\n"
 xcode-select --install
 
+printf "brew: tap cask-fonts\n"
+brew tap homebrew/cask-fonts
+
+printf "brew: installing fonts\n"
+brew cask install font-fira-code
+
 printf "brew: Installing cli packages\n"
 brew install git
 brew install mas            # Apple store cli
@@ -21,7 +27,7 @@ brew install asdf           # version manager
 brew install neovim --HEAD  # Guilty pleasure
 brew install tmux
 
-# Install ZSH and Oh My ZSH
+# Install ZSH and use it
 brew install zsh
 
 chsh -s /usr/local/bin/zsh
@@ -41,7 +47,6 @@ brew cask install signal
 brew cask install moom
 
 # Installs App Store software.
-
 if ! command -v mas > /dev/null; then
   printf "ERROR: Mac App Store CLI (mas) can't be found.\n"
   printf "       Please ensure Homebrew and mas (i.e. brew install mas) have been installed first."
