@@ -1,6 +1,7 @@
 cd ~
+mkdir -p ~/.tmux/plugins/tpm
 # cleanup
-rm -rf ~/.vim/zgen ~/.vim/bundle
+rm -rf ~/.vim/zgen ~/.vim/bundle ~/.tmux/plugins/tpm
 
 # install zgen
 git clone https://github.com/tarjoilija/zgen.git ~/.vim/zgen
