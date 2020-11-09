@@ -33,8 +33,10 @@ Plug 'elixir-editors/vim-elixir'
 " Typescript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
 
-"theme (Oceanic-next)
+" theme (Oceanic-next)
 Plug 'mhartington/oceanic-next'
+" theme molokai
+Plug 'tomasr/molokai'
 
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
