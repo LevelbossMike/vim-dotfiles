@@ -29,6 +29,7 @@ brew install neovim --HEAD  # teh best editor
 brew install tmux           # multiplex terminal
 brew install gnupg          # to verify packages from asdf
 brew install z              # track most-used directories
+brew install ripgrep        # for searching
 
 # Install ZSH and use it
 chsh -s /usr/local/bin/zsh
