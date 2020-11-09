@@ -21,15 +21,16 @@ printf "brew: installing fonts\n"
 brew cask install font-fira-code
 
 printf "brew: Installing cli packages\n"
-brew install git
+brew install git            # To use up-to-date git
+brew install zsh            # to use up-to-date zsh
 brew install mas            # Apple store cli
 brew install asdf           # version manager
-brew install neovim --HEAD  # Guilty pleasure
-brew install tmux
+brew install neovim --HEAD  # teh best editor
+brew install tmux           # multiplex terminal
+brew install gnupg          # to verify packages from asdf
+brew install z              # track most-used directories
 
 # Install ZSH and use it
-brew install zsh
-
 chsh -s /usr/local/bin/zsh
 /usr/local/bin/zsh
 
@@ -45,6 +46,8 @@ brew cask install obsidian
 brew cask install twist
 brew cask install signal
 brew cask install moom
+brew cask install launchbar
+# brew cask install little-snitch - little snitch needs to be installed manually
 
 # Installs App Store software.
 if ! command -v mas > /dev/null; then
