@@ -43,6 +43,7 @@ brew cask install obsidian
 brew cask install twist
 brew cask install signal
 brew cask install moom
+brew cask install discord
 brew cask install launchbar
 # brew cask install little-snitch - little snitch needs to be installed manually
 brew cask install spark              # create hotkeys
