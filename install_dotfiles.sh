@@ -26,5 +26,5 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 # nvim configuration
 ln -sf ~/.vim/nvim_init.vim ~/.config/nvim/init.vim
 
-# change shell to zsh
-chsh -s $(which zsh)
+# change shell to zsh - use zsh installed via homebrew
+chsh -s /usr/local/bin/zsh
