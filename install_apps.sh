@@ -31,10 +31,6 @@ brew install gnupg          # to verify packages from asdf
 brew install z              # track most-used directories
 brew install ripgrep        # for searching
 
-# Install ZSH and use it
-chsh -s /usr/local/bin/zsh
-/usr/local/bin/zsh
-
 printf "brew: Installing apps\n"
 brew cask install 1password
 brew cask install dropbox
@@ -49,8 +45,9 @@ brew cask install signal
 brew cask install moom
 brew cask install launchbar
 # brew cask install little-snitch - little snitch needs to be installed manually
+brew cask install spark
 
-# Installs App Store software.
+# Installs App Store software - find IDs by running `mas search`
 if ! command -v mas > /dev/null; then
   printf "ERROR: Mac App Store CLI (mas) can't be found.\n"
   printf "       Please ensure Homebrew and mas (i.e. brew install mas) have been installed first."
@@ -65,3 +62,6 @@ mas install 784801555
 
 printf "AppStore: Installing PLIST Editor\n"
 mas install 1157491961
+
+printf "AppStore: Installing Kindle App\n"
+mas install 405399194
