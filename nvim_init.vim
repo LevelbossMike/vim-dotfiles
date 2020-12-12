@@ -20,10 +20,12 @@ Plug 'joukevandermaas/vim-ember-hbs'
 " Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/zoomwintab.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'hallison/vim-markdown'
-Plug 'rking/ag.vim'
+" Find
+Plug 'jremmen/vim-ripgrep'
+" Replace
+Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
@@ -136,10 +138,8 @@ tnoremap <leader><ESC> <C-\><C-n>
 """"""""""""""""""""""""
 " plugin customization "
 """"""""""""""""""""""""
-" NERDTree customization
-map <leader><TAB> :<C-U>NERDTreeToggle<CR>
-let g:NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
+" netrw customization
+map <leader><TAB> :Explore<CR>
 
 " NERDCommenter - always use one space between comment and code
 let NERDSpaceDelims=1
