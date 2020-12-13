@@ -57,13 +57,16 @@ if ! command -v mas > /dev/null; then
 fi
 
 printf "AppStore: Installing Todoist\n"
-mas install 585829637  
+mas install 585829637
 
 printf "AppStore: Installing Microsoft OneNote\n"
-mas install 784801555 
+mas install 784801555
 
 printf "AppStore: Installing PLIST Editor\n"
 mas install 1157491961
 
 printf "AppStore: Installing Kindle App\n"
 mas install 405399194
+
+printf "AppStore: Installing Gifski\n"
+mas install 1351639930
