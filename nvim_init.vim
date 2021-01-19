@@ -31,6 +31,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'elixir-editors/vim-elixir'
+Plug 'leafOfTree/vim-svelte-plugin'
 
 " Typescript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
@@ -300,8 +301,10 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " nmap gh :call CocAction('diagnosticInfo')<Cr>
 
 " scroll in floating windows via
-nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
-nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
+nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 " fuzzy-find files coc
 map <leader>t :CocList files<cr>
