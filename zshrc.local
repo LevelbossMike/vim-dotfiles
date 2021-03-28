@@ -51,7 +51,7 @@ fi
 # use asdf version manager
 if which asdf > /dev/null; then . /usr/local/opt/asdf/asdf.sh; fi
 
-export PATH=$HOME/.yarn/bin:$PATH;
+export PATH=$VOLTA_HOME/bin:$PATH;
 
 ###########
 # Aliases #
