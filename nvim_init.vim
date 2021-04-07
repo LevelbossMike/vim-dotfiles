@@ -40,7 +40,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/oceanic-next'
 " theme molokai
 Plug 'tomasr/molokai'
-
+" Ain't nobody got time to argue about tabs vs. spaces
+Plug 'editorconfig/editorconfig-vim'
 """""""""""""""""""""""""""""""""
 " Tim Pope is teh vim superhero "
 """"""""""""""""""""""""""""""""""
