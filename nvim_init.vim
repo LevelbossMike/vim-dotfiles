@@ -11,9 +11,6 @@ call plug#begin('~/.vim/plugged')
 """""""
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" work with hbs in ember
-Plug 'joukevandermaas/vim-ember-hbs'
-
 """""""""""""""""""
 " Various plugins "
 """""""""""""""""""
@@ -22,24 +19,31 @@ Plug 'vim-scripts/zoomwintab.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'hallison/vim-markdown'
+"
 " Find
 Plug 'jremmen/vim-ripgrep'
+
 " Replace
-Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'terryma/vim-multiple-cursors'
+
+" Languages / frameworks
 Plug 'pangloss/vim-javascript'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'elixir-editors/vim-elixir'
 Plug 'leafOfTree/vim-svelte-plugin'
-
 " Typescript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
+" work with hbs in ember
+Plug 'joukevandermaas/vim-ember-hbs'
+
+" Theming
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " theme (Oceanic-next)
 Plug 'mhartington/oceanic-next'
 " theme molokai
 Plug 'tomasr/molokai'
+
 " Ain't nobody got time to argue about tabs vs. spaces
 Plug 'editorconfig/editorconfig-vim'
 """""""""""""""""""""""""""""""""
