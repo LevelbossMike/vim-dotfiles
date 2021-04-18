@@ -73,9 +73,9 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-" colorscheme OceanicNext
+colorscheme OceanicNext
 " colorscheme molokai
-colorscheme embark
+" colorscheme embark
 
 " show linenumbers
 set number
