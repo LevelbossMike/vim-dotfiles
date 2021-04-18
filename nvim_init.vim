@@ -166,6 +166,13 @@ map <leader>0 :ZoomWinTabToggle<CR>
 " yanking should save to system clipboard
 set clipboard=unnamedplus
 
+"""""""""""""""""""""""""""""""""""""
+" better language/framework support "
+"""""""""""""""""""""""""""""""""""""
+
+" use `handlebars` instead of `html.handlebars` - important for prettier
+autocmd BufRead,BufNewFile *.hbs set filetype=handlebars
+
 """""""""""""""""""""""""""""""
 " Coc (stolen from Coc README)"
 """""""""""""""""""""""""""""""
