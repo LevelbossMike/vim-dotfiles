@@ -41,8 +41,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 " theme (Oceanic-next)
 Plug 'mhartington/oceanic-next'
-" theme molokai
+" theme (molokai)
 Plug 'tomasr/molokai'
+" theme (embark)
+Plug 'embark-theme/vim', { 'as': 'embark' }
 
 " Ain't nobody got time to argue about tabs vs. spaces
 Plug 'editorconfig/editorconfig-vim'
@@ -71,7 +73,9 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme OceanicNext
+" colorscheme OceanicNext
+" colorscheme molokai
+colorscheme embark
 
 " show linenumbers
 set number
