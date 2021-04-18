@@ -165,10 +165,6 @@ map <leader>0 :ZoomWinTabToggle<CR>
 
 " yanking should save to system clipboard
 set clipboard=unnamedplus
-"
-" Use powerline symbols
-let g:airline_powerline_fonts=1
-let g:airline_theme='base16_ocean'
 
 """""""""""""""""""""""""""""""
 " Coc (stolen from Coc README)"
@@ -336,3 +332,4 @@ let g:coc_global_extensions = [
   \ 'coc-elixir',
   \ 'coc-ember'
 \ ]
+
