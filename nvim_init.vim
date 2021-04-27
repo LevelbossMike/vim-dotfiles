@@ -94,7 +94,7 @@ set formatoptions=qrn1
 set colorcolumn=79
 " show end of lines
 set list
-set listchars=tab:\ \ ,trail:·,eol:~
+set listchars=trail:·,eol:~,tab:▸\
 
 """""""""""""
 " Searching "
