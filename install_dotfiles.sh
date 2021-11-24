@@ -27,4 +27,5 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 ln -sf ~/.vim/nvim_init.vim ~/.config/nvim/init.vim
 
 # alacritty configuration
+mkdir -p ~/.config/alacritty
 ln -sf ~/.vim/alacritty.yml ~/.config/alacritty/alacritty.yml
