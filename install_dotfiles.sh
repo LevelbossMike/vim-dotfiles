@@ -23,6 +23,9 @@ cp ~/.vim/editrc.local ~/.editrc
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# environment variables
+ln -sf ~/.vim/envs.local ~/.envs
+
 # nvim configuration
 ln -sf ~/.vim/nvim_init.vim ~/.config/nvim/init.vim
 
