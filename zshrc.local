@@ -49,7 +49,7 @@ fi
 . /usr/local/opt/z/etc/profile.d/z.sh
 
 # use asdf version manager
-if which asdf > /dev/null; then . /usr/local/opt/asdf/asdf.sh; fi
+if which asdf > /dev/null; then . /opt/homebrew/opt/asdf/libexec/asdf.sh; fi
 
 export PATH=$VOLTA_HOME/bin:$PATH;
 
