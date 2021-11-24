@@ -28,6 +28,3 @@ ln -sf ~/.vim/nvim_init.vim ~/.config/nvim/init.vim
 
 # alacritty configuration
 ln -sf ~/.vim/alacritty.yml ~/.config/alacritty/alacritty.yml
-
-# change shell to zsh - use zsh installed via homebrew
-chsh -s /usr/local/bin/zsh
