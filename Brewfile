@@ -1,48 +1,32 @@
-#########
-# Fonts #
-#########
+tap "homebrew/cask-fonts"
 
-# install fonts via homebrew
-tap "caskroom/fonts"
-
-# http://adobe-fonts.github.io/source-code-pro/
-cask "font-source-code-pro"
-# patched fira code
-cask "font-firacode-nerd-font"
-
-#########
-# Tools #
-#########
-
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 brew "tmux"
 brew "z"
-brew "the_silver_searcher"
-brew "watchman"
-
-brew "postgresql"
-brew "redis"
-
-brew "elixir"
-
-# manage node versions
-brew 'nodenv'
-
-# manage ruby versions
-brew "rbenv"
-
-# node package-management
-brew "yarn"
-
-# better curl
+brew "volta"
+brew "asdf"
+brew "ripgrep"
 brew "httpie"
+brew "gh"
+brew "git"
 
-#########
-# Casks #
-#########
+cask "obsidian"
+cask "brave-browser"
+cask "google-chrome"
+cask "alacritty"
+cask "docker"
+cask "spark"
+cask "moom"
+cask "launchbar"
+cask "little-snitch"
+cask "istat-menus"
+cask "discord"
+cask "spotify"
+cask "slack"
+cask "twist"
+cask "dropbox"
+cask "freedom"
+cask "zotero"
 
-# cask "spark"
-# cask "istat-menus"
-# cask "slack"
-# cask "papers"
-# cask "launchbar"
+cask "font-fira-code"
+cask "font-jetbrains-mono"
