@@ -46,7 +46,7 @@ if ! zgen saved; then
 fi
 
 # use z for easier file system navigation
-. /usr/local/opt/z/etc/profile.d/z.sh
+. /opt/homebrew/etc/profile.d/z.sh
 
 # use asdf version manager
 if which asdf > /dev/null; then . /opt/homebrew/opt/asdf/libexec/asdf.sh; fi
