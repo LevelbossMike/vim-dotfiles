@@ -27,6 +27,8 @@ cask "twist"
 cask "dropbox"
 cask "freedom"
 cask "zotero"
+cask "signal"
+cask "zoom"
 
 cask "font-fira-code"
 cask "font-jetbrains-mono"
