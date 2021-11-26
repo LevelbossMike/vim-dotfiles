@@ -29,6 +29,7 @@ cask "freedom"
 cask "zotero"
 cask "signal"
 cask "zoom"
+cask "obs"
 
 cask "font-fira-code"
 cask "font-jetbrains-mono"
