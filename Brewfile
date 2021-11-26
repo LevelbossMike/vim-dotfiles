@@ -30,6 +30,7 @@ cask "zotero"
 cask "signal"
 cask "zoom"
 cask "obs"
+cask "karabiner-elements"
 
 cask "font-fira-code"
 cask "font-jetbrains-mono"
