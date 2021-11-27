@@ -28,6 +28,8 @@ ln -sf ~/.vim/envs.local ~/.envs
 
 # nvim configuration
 ln -sf ~/.vim/nvim_init.vim ~/.config/nvim/init.vim
+# coc configuration
+ln -sf ~/.vim/coc-settings.local ~/.config/nvim/coc-settings.json
 
 # alacritty configuration
 mkdir -p ~/.config/alacritty
