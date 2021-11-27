@@ -339,6 +339,8 @@ let g:coc_global_extensions = [
   \ 'coc-emmet',
   \ 'coc-git',
   \ 'coc-elixir',
-  \ 'coc-ember'
+  \ 'coc-ember',
+  \ 'coc-prettier',
+  \ 'coc-tailwindcss'
 \ ]
 
