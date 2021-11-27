@@ -83,10 +83,10 @@ set-option -ga terminal-overrides ",xterm-256color:Tc"
 # Tmux plugin manager #
 #######################
 
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-yank'
+# set -g @plugin 'tmux-plugins/tpm'
+# set -g @plugin 'tmux-plugins/tmux-yank'
 
-run -b '~/.tmux/plugins/tpm/tpm'
+# run -b '~/.tmux/plugins/tpm/tpm'
 
 # remove status bar
 set -g status off
