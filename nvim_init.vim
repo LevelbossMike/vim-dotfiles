@@ -21,9 +21,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'hallison/vim-markdown'
 "
 " Find
-" Plug 'jremmen/vim-ripgrep'
-" use fork until https://github.com/jremmen/vim-ripgrep/pull/58 is fixed
-Plug 'mi544/vim-ripgrep'
+Plug 'jremmen/vim-ripgrep'
 
 " Replace
 Plug 'terryma/vim-multiple-cursors'
