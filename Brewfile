@@ -31,6 +31,7 @@ cask "signal"
 cask "zoom"
 cask "obs"
 cask "karabiner-elements"
+cask "soundsource"
 
 cask "font-fira-code"
 cask "font-jetbrains-mono"
