@@ -9,6 +9,7 @@ brew "ripgrep"
 brew "httpie"
 brew "gh"
 brew "git"
+brew "gifski"
 
 cask "obsidian"
 cask "brave-browser"
