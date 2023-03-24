@@ -53,6 +53,9 @@ if which asdf > /dev/null; then . /opt/homebrew/opt/asdf/libexec/asdf.sh; fi
 
 export PATH=$VOLTA_HOME/bin:$PATH;
 
+# use gvm for managing go versions
+source /Users/ahoy/.gvm/scripts/gvm
+
 ###########
 # Aliases #
 ###########
