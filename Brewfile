@@ -33,6 +33,7 @@ cask "zoom"
 cask "obs"
 cask "karabiner-elements"
 cask "soundsource"
+cask "gas-mask"
 
 cask "font-fira-code"
 cask "font-jetbrains-mono"
