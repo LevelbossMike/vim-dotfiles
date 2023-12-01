@@ -1,104 +1,49 @@
-env:
-  TERM: xterm-256color
 font:
   normal:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     style: Regular
   bold:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     style: Bold
   italic:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     style: Italic
   bold_italic:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
   size: 12.0
-  use_thin_strokes: false
-# Colors (Oceanic Next)
-# https://github.com/alacritty/alacritty/wiki/Color-schemes#oceanic-next
-schemes:
-  embark: &embark
-    primary:
-      background: "0x1e1c31"
-      foreground: "0xcbe3e7"
-    cursor:
-      text: "0x1e1c31"
-      cursor: "0xa1efd3"
-    normal:
-      black: "0x1e1c31"
-      red: "0xf48fb1"
-      green: "0xa1efd3"
-      yellow: "0xffe6b3"
-      blue: "0x91ddff"
-      magenta: "0xd4bfff"
-      cyan: "0x87dfeb"
-      white: "0xcbe3e7"
-    bright:
-      black: "0x585273"
-      red: "0xf02e6e"
-      green: "0x62d196"
-      yellow: "0xf2b482"
-      blue: "0x65b2ff"
-      magenta: "0xa37acc"
-      cyan: "0x63f2f1"
-      white: "0x8a889d"
-  oceanic-next: &oceanic # Default colors
-    primary:
-      background: "#1b2b34"
-      foreground: "#d8dee9"
+# TokyoNight Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: "0x222436"
+    foreground: "0xc8d3f5"
 
-    # Colors the cursor will use if `custom_cursor_colors` is true
-    cursor:
-      text: "#1b2b34"
-      cursor: "#ffffff"
+  # Normal colors
+  normal:
+    black: "0x1b1d2b"
+    red: "0xff757f"
+    green: "0xc3e88d"
+    yellow: "0xffc777"
+    blue: "0x82aaff"
+    magenta: "0xc099ff"
+    cyan: "0x86e1fc"
+    white: "0x828bb8"
 
-    # Normal colors
-    normal:
-      black: "#343d46"
-      red: "#EC5f67"
-      green: "#99C794"
-      yellow: "#FAC863"
-      blue: "#6699cc"
-      magenta: "#c594c5"
-      cyan: "#5fb3b3"
-      white: "#d8dee9"
+  # Bright colors
+  bright:
+    black: "0x444a73"
+    red: "0xff757f"
+    green: "0xc3e88d"
+    yellow: "0xffc777"
+    blue: "0x82aaff"
+    magenta: "0xc099ff"
+    cyan: "0x86e1fc"
+    white: "0xc8d3f5"
 
-    # Bright colors
-    bright:
-      black: "#343d46"
-      red: "#EC5f67"
-      green: "#99C794"
-      yellow: "#FAC863"
-      blue: "#6699cc"
-      magenta: "#c594c5"
-      cyan: "#5fb3b3"
-      white: "#d8dee9"
-  molokai: &molokai # Default colors
-    primary:
-      background: "#1B1D1E"
-      foreground: "#F8F8F2"
-    # Normal colors
-    normal:
-      black: "#333333"
-      red: "#C4265E"
-      green: "#86B42B"
-      yellow: "#B3B42B"
-      blue: "#6A7EC8"
-      magenta: "#8C6BC8"
-      cyan: "#56ADBC"
-      white: "#E3E3DD"
-    # Bright colors
-    bright:
-      black: "#666666"
-      red: "#F92672"
-      green: "#A6E22E"
-      yellow: "#E2E22E"
-      blue: "#819AFF"
-      magenta: "#AE81FF"
-      cyan: "#66D9EF"
-      white: "#F8F8F2"
-colors: *oceanic
+  indexed_colors:
+    - { index: 16, color: "0xff966c" }
+    - { index: 17, color: "0xc53b53" }
 live_config_reload: true
 # handle mac keyboard layot de_DE
 key_bindings:
