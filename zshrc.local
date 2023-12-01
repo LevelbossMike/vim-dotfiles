@@ -67,9 +67,6 @@ alias t="tmux -u" # run with utf-8 enabled!
 alias tl="tmux ls"
 alias ta="tmux attach -t"
 
-# ember
-alias e="node_modules/ember-cli/bin/ember"
-
 # git
 alias gb='git branch'
 alias gco='git checkout'
